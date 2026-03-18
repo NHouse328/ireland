@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Dublin 2026 — Nos Viajante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-dark: #0F2D1F;
+  --green-mid: #1A4332;
+  --green-bright: #2D6A4F;
+  --green-light: #52B788;
+  --green-pale: #D8F3DC;
+  --gold: #C9A84C;
+  --gold-pale: #FFF8E7;
+  --cream: #FAFAF5;
+  --white: #FFFFFF;
+  --text: #1C2726;
+  --muted: #6B7C79;
+  --border: #E2EAE7;
+  --red: #C0392B;
+  --red-pale: #FDE8E6;
+  --amber: #B7770D;
+  --amber-pale: #FFF3CD;
+  --blue: #1A6FA3;
+  --blue-pale: #EBF5FB;
+  --shadow: 0 2px 12px rgba(15,45,31,0.08);
+  --shadow-lg: 0 8px 32px rgba(15,45,31,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --nav-w: 270px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  display:flex;
+  min-height:100vh;
+  font-size:14px;
+  line-height:1.65;
+}
+
+/* ─── SIDEBAR ─────────────────────── */
+#sidebar{
+  width:var(--nav-w);
+  min-width:var(--nav-w);
+  background:var(--green-dark);
+  height:100vh;
+  position:sticky;
+  top:0;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,0.15) transparent;
+}
+.sidebar-logo{
+  padding:24px 20px 16px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.sidebar-logo .shamrock{font-size:28px;line-height:1}
+.sidebar-logo h1{
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  font-weight:700;
+  color:var(--white);
+  margin-top:8px;
+  line-height:1.2;
+}
+.sidebar-logo p{font-size:11px;color:var(--gold);margin-top:2px;letter-spacing:0.05em}
+.yt-sidebar{
+  margin:12px 14px;
+  background:linear-gradient(135deg,#FF0000 0%,#CC0000 100%);
+  border-radius:var(--radius-sm);
+  padding:10px 12px;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:opacity .2s;
+}
+.yt-sidebar:hover{opacity:.9}
+.yt-sidebar .yt-icon{font-size:18px}
+.yt-sidebar .yt-text{flex:1}
+.yt-sidebar .yt-text strong{display:block;font-size:11px;font-weight:700;color:white}
+.yt-sidebar .yt-text span{font-size:10px;color:rgba(255,255,255,0.85)}
+.nav-group{padding:4px 0}
+.nav-label{
+  padding:10px 20px 4px;
+  font-size:10px;
+  font-weight:700;
+  color:rgba(255,255,255,0.3);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.nav-link{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 20px;
+  font-size:12.5px;
+  font-weight:500;
+  color:rgba(255,255,255,0.65);
+  text-decoration:none;
+  transition:all .15s;
+  border-left:3px solid transparent;
+}
+.nav-link:hover{color:white;background:rgba(255,255,255,0.05)}
+.nav-link.active{color:white;border-left-color:var(--gold);background:rgba(201,168,76,0.1)}
+.nav-link .dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.2);
+  flex-shrink:0;
+}
+.nav-link.active .dot{background:var(--gold)}
+
+/* ─── MAIN CONTENT ───────────────── */
+#main{flex:1;min-width:0}
+
+/* ─── HERO ──────────────────────── */
+.hero{
+  background:linear-gradient(135deg,var(--green-mid) 0%,var(--green-bright) 100%);
+  padding:60px 56px 52px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'☘';
+  position:absolute;
+  right:-20px;top:-40px;
+  font-size:240px;
+  opacity:.04;
+  line-height:1;
+  pointer-events:none;
+}
+.hero-tag{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;
+  padding:4px 14px;
+  font-size:11px;
+  font-weight:600;
+  color:rgba(255,255,255,0.8);
+  letter-spacing:.05em;
+  margin-bottom:16px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  font-weight:700;
+  color:white;
+  line-height:1.15;
+  max-width:560px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  margin-top:12px;
+  color:rgba(255,255,255,0.75);
+  font-size:15px;
+  max-width:520px;
+}
+.hero-stats{
+  display:flex;
+  gap:24px;
+  margin-top:36px;
+  flex-wrap:wrap;
+}
+.hero-stat{
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  border-radius:var(--radius);
+  padding:16px 22px;
+  min-width:130px;
+}
+.hero-stat .val{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+  color:white;
+}
+.hero-stat .lbl{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px}
+.hero-stat .sub{font-size:11px;color:var(--gold);font-weight:600}
+.hero-alert{
+  margin-top:24px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(201,168,76,0.15);
+  border:1px solid rgba(201,168,76,0.4);
+  border-radius:var(--radius-sm);
+  padding:10px 16px;
+  font-size:12px;
+  color:rgba(255,255,255,0.85);
+}
+
+/* ─── YT BANNER ─────────────────── */
+.yt-banner{
+  background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%);
+  margin:32px 40px;
+  border-radius:var(--radius);
+  padding:28px 32px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:var(--shadow);
+}
+.yt-banner:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.yt-play{
+  width:64px;height:64px;
+  background:#FF0000;
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  box-shadow:0 4px 16px rgba(255,0,0,0.3);
+}
+.yt-play svg{width:28px;height:28px;fill:white;margin-left:3px}
+.yt-info{flex:1}
+.yt-info h3{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  font-weight:600;
+  color:white;
+  line-height:1.2;
+}
+.yt-info p{font-size:13px;color:rgba(255,255,255,0.55);margin-top:4px}
+.yt-info .yt-handle{
+  display:inline-block;
+  margin-top:8px;
+  background:rgba(255,0,0,0.15);
+  border:1px solid rgba(255,0,0,0.3);
+  border-radius:20px;
+  padding:3px 12px;
+  font-size:11px;
+  font-weight:600;
+  color:#FF6B6B;
+  letter-spacing:.03em;
+}
+.yt-cta{
+  background:#FF0000;
+  border-radius:var(--radius-sm);
+  padding:10px 20px;
+  font-size:13px;
+  font-weight:700;
+  color:white;
+  flex-shrink:0;
+  white-space:nowrap;
+}
+
+/* ─── SECTIONS ───────────────────── */
+.section{
+  padding:40px 40px 48px;
+  border-bottom:1px solid var(--border);
+}
+.section:last-child{border-bottom:none}
+.section-header{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:28px;
+}
+.section-icon{
+  width:48px;height:48px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  flex-shrink:0;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  font-weight:700;
+  color:var(--green-mid);
+  line-height:1.2;
+}
+.section-sub{font-size:13px;color:var(--muted);margin-top:3px}
+
+/* ─── CARDS ──────────────────────── */
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:22px 24px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+.card h3{
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  font-weight:600;
+  color:var(--green-mid);
+  margin-bottom:16px;
+}
+.card h4{font-size:14px;font-weight:600;color:var(--text)}
+.card + .card{margin-top:16px}
+.card-grid{display:grid;gap:16px}
+.cols2{grid-template-columns:1fr 1fr}
+.cols3{grid-template-columns:1fr 1fr 1fr}
+.cols4{grid-template-columns:repeat(4,1fr)}
+
+/* ─── STAT CARDS ─────────────────── */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px}
+.stat-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  text-align:center;
+}
+.stat-card .val{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:4px;
+}
+.stat-card .lbl{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.stat-card .sub{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ─── TABLES ─────────────────────── */
+.data-table{width:100%;border-collapse:collapse;font-size:13px}
+.data-table th{
+  background:var(--green-pale);
+  color:var(--green-mid);
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  padding:8px 14px;
+  text-align:left;
+  border-bottom:2px solid #B7E4C7;
+}
+.data-table td{padding:9px 14px;border-bottom:1px solid var(--border)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#f8fffe}
+.data-table tr.hl td{background:var(--green-pale)}
+
+/* ─── BADGES ─────────────────────── */
+.badge{
+  display:inline-block;
+  padding:2px 9px;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.badge-green{background:var(--green-pale);color:var(--green-mid)}
+.badge-red{background:var(--red-pale);color:var(--red)}
+.badge-amber{background:var(--amber-pale);color:var(--amber)}
+.badge-blue{background:var(--blue-pale);color:var(--blue)}
+.badge-gold{background:var(--gold-pale);color:#8B6914}
+
+/* ─── CALLOUTS ───────────────────── */
+.callout{
+  display:flex;
+  gap:12px;
+  padding:14px 16px;
+  border-radius:var(--radius-sm);
+  margin-bottom:16px;
+  font-size:13px;
+}
+.callout:last-child{margin-bottom:0}
+.callout .icon{font-size:18px;flex-shrink:0;line-height:1.4}
+.callout-green{background:var(--green-pale);border-left:4px solid var(--green-light)}
+.callout-amber{background:var(--amber-pale);border-left:4px solid #F0B429}
+.callout-red{background:var(--red-pale);border-left:4px solid var(--red)}
+.callout-blue{background:var(--blue-pale);border-left:4px solid var(--blue)}
+.callout-gold{background:var(--gold-pale);border-left:4px solid var(--gold)}
+
+/* ─── TABS ───────────────────────── */
+.tabs{display:flex;gap:4px;border-bottom:2px solid var(--border);margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{
+  padding:9px 18px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--muted);
+  background:none;
+  border:none;
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  margin-bottom:-2px;
+  border-radius:var(--radius-sm) var(--radius-sm) 0 0;
+  transition:all .15s;
+}
+.tab-btn:hover{color:var(--green-mid);background:var(--green-pale)}
+.tab-btn.active{color:var(--green-mid);border-bottom-color:var(--green-mid);background:var(--green-pale)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ─── BUDGET TOGGLE ──────────────── */
+.person-toggle{
+  display:flex;
+  background:var(--border);
+  border-radius:30px;
+  padding:3px;
+  width:fit-content;
+  margin-bottom:24px;
+}
+.person-btn{
+  padding:8px 22px;
+  border-radius:28px;
+  font-size:13px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition:all .2s;
+  color:var(--muted);
+  background:none;
+}
+.person-btn.active{background:var(--green-mid);color:white;box-shadow:0 2px 8px rgba(26,67,50,0.25)}
+.budget-scenario{display:none}
+.budget-scenario.active{display:block}
+.budget-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+}
+.budget-item:last-of-type{border-bottom:none}
+.budget-item .name{font-weight:500;font-size:13px}
+.budget-item .note{font-size:11px;color:var(--muted);margin-top:1px}
+.budget-item .amount{font-weight:700;font-size:13px;color:var(--text);white-space:nowrap;margin-left:12px}
+.budget-bar-wrap{height:4px;background:var(--border);border-radius:4px;margin:3px 0 6px}
+.budget-bar-fill{height:4px;border-radius:4px}
+.budget-total{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px;
+  background:var(--cream);
+  border-radius:var(--radius-sm);
+  margin-top:12px;
+  border:2px solid var(--border);
+}
+.budget-total .tl{font-size:13px;font-weight:600;color:var(--muted)}
+.budget-total .tv{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  font-weight:700;
+}
+.budget-surplus{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 20px;
+  border-radius:var(--radius);
+  margin-top:12px;
+}
+.budget-surplus .sl{font-weight:600;font-size:13px}
+.budget-surplus .ss{font-size:11px;margin-top:2px;opacity:.7}
+.budget-surplus .sv{
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+  font-weight:700;
+}
+.scenario-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.scen-btn{
+  padding:8px 16px;
+  border-radius:var(--radius-sm);
+  font-size:12px;
+  font-weight:600;
+  border:2px solid var(--border);
+  cursor:pointer;
+  background:var(--white);
+  color:var(--muted);
+  transition:all .15s;
+}
+.scen-btn.active{border-color:var(--green-mid);color:var(--green-mid);background:var(--green-pale)}
+
+/* ─── TIMELINE ───────────────────── */
+.timeline{padding-left:20px;border-left:2px solid var(--border)}
+.tl-item{position:relative;padding-left:24px;padding-bottom:24px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{
+  position:absolute;left:-27px;top:2px;
+  width:12px;height:12px;
+  border-radius:50%;
+  border:2px solid white;
+  box-shadow:0 0 0 2px var(--border);
+}
+.tl-item h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.tl-item p{font-size:13px;color:var(--muted)}
+
+/* ─── WEATHER STRIP ──────────────── */
+.weather-strip{display:flex;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.month-cell{flex:1;padding:12px 6px;text-align:center;min-width:0}
+.month-name{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase}
+.month-temp{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin:3px 0}
+.month-rain{font-size:14px}
+
+/* ─── CLOTHING ───────────────────── */
+.tier-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.tier-tab{
+  padding:7px 16px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+  border:2px solid var(--border);
+  cursor:pointer;
+  background:var(--white);
+  color:var(--muted);
+  transition:all .15s;
+}
+.tier-tab.active{border-color:var(--green-mid);color:var(--green-mid);background:var(--green-pale)}
+.tier-panel{display:none}
+.tier-panel.active{display:block}
+.clothing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:12px}
+.clothing-item{
+  background:var(--white);
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  padding:12px 14px;
+}
+.clothing-item h4{font-size:13px;font-weight:600;color:var(--text)}
+.clothing-item .brand{font-size:11px;color:var(--muted);margin-top:2px}
+.clothing-price{
+  display:inline-block;
+  margin-top:8px;
+  padding:2px 8px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* ─── CHECKLIST ─────────────────── */
+.checklist{list-style:none}
+.check-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  cursor:pointer;
+}
+.check-item:last-child{border-bottom:none}
+.check-item input[type=checkbox]{
+  width:18px;height:18px;
+  accent-color:var(--green-mid);
+  flex-shrink:0;
+  margin-top:1px;
+  cursor:pointer;
+}
+.check-item .ci-text{flex:1}
+.check-item .ci-name{font-size:13px;font-weight:500}
+.check-item .ci-note{font-size:11px;color:var(--muted)}
+.check-item.done .ci-name{text-decoration:line-through;color:var(--muted)}
+.check-group h4{font-size:12px;font-weight:700;color:var(--green-bright);text-transform:uppercase;letter-spacing:.06em;margin:16px 0 6px}
+.check-progress{
+  background:var(--border);
+  height:6px;
+  border-radius:6px;
+  margin-bottom:20px;
+  overflow:hidden;
+}
+.check-progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--green-bright),var(--gold));
+  border-radius:6px;
+  transition:width .4s;
+}
+.check-stats{
+  display:flex;
+  gap:16px;
+  margin-bottom:16px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* ─── FOOD TABS ─────────────────── */
+.food-pill{
+  background:var(--green-pale);
+  border-radius:20px;
+  padding:2px 12px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--green-mid);
+  display:inline-block;
+}
+
+/* ─── UTILITIES ─────────────────── */
+.dots{list-style:none;padding:0}
+.dots li{padding:3px 0 3px 16px;position:relative;font-size:13px}
+.dots li::before{content:'•';position:absolute;left:0;color:var(--green-light)}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.text-green{color:var(--green-bright)}
+.text-red{color:var(--red)}
+.text-amber{color:var(--amber)}
+.text-blue{color:var(--blue)}
+.text-gold{color:var(--gold)}
+.mt8{margin-top:8px}
+.mt12{margin-top:12px}
+.mt16{margin-top:16px}
+.mt24{margin-top:24px}
+.divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+strong{font-weight:700}
+em{font-style:italic}
+
+/* ─── RESPONSIVE ─────────────────── */
+@media(max-width:900px){
+  :root{--nav-w:0px}
+  #sidebar{display:none}
+  .hero{padding:32px 24px}
+  .section{padding:28px 20px 36px}
+  .yt-banner{margin:16px 16px;flex-direction:column;align-items:flex-start}
+  .cols2,.cols3,.cols4{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── SIDEBAR ─────────────────────────────── -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <div class="shamrock">☘️</div>
+    <h1>Guia Dublin<br>2026</h1>
+    <p>CASAL BRASILEIRO → IRLANDA</p>
+  </div>
+
+  <a href="https://www.youtube.com/@nos.viajante" target="_blank" class="yt-sidebar">
+    <div class="yt-icon">▶️</div>
+    <div class="yt-text">
+      <strong>@nos.viajante</strong>
+      <span>Acompanhe nossa jornada</span>
+    </div>
+  </a>
+
+  <div class="nav-group">
+    <div class="nav-label">Visão Geral</div>
+    <a href="#inicio" class="nav-link active" onclick="setActive(this)"><span class="dot"></span>Início & Dados 2026</a>
+    <a href="#clima" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Clima de Dublin</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Documentação</div>
+    <a href="#pps" class="nav-link" onclick="setActive(this)"><span class="dot"></span>PPS Number</a>
+    <a href="#banco" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Contas Bancárias</a>
+    <a href="#chip" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Chip de Celular</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Imigração & Cidadania</div>
+    <a href="#cidadao-eu" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Cidadão EU (não irlandês)</a>
+    <a href="#conjuge-eu" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Cônjuge Brasileiro (EU Treaty)</a>
+    <a href="#conjuge-irlandes" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Cônjuge de Irlandês</a>
+    <a href="#fbr" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Descendência Irlandesa (FBR)</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Vida em Dublin</div>
+    <a href="#moradia" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Moradia & Aluguel</a>
+    <a href="#roupas" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Roupas & Lavanderia</a>
+    <a href="#casa" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Itens Essenciais do Lar</a>
+    <a href="#alimentacao" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Supermercados & Alimentação</a>
+    <a href="#comer-fora" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Comer Fora</a>
+    <a href="#carro" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Carro & CNH</a>
+    <a href="#dicas" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Diferenças Culturais</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Lazer & Turismo</div>
+    <a href="#turistico" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Pontos Turísticos</a>
+    <a href="#lazer" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Bares & Entretenimento</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Orçamento</div>
+    <a href="#orcamento" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Simulador (1 ou 2 pessoas)</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Checklist</div>
+    <a href="#checklist" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Lista de Tarefas</a>
+  </div>
+</nav>
+
+<!-- ─── MAIN ──────────────────────────────────── -->
+<main id="main">
+
+<!-- HERO -->
+<div id="inicio">
+  <div class="hero">
+    <div class="hero-tag">☘️ GUIA ATUALIZADO — MARÇO 2026</div>
+    <h1>Tudo que você precisa saber para morar em <span>Dublin</span>, Irlanda</h1>
+    <p>Guia completo e validado para casais brasileiros. Documentação, custos, moradia, cidadania e muito mais — com dados reais de 2026.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="val">€14,15</div>
+        <div class="lbl">Salário mínimo/hora</div>
+        <div class="sub">▲ Jan 2026 oficial</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">€2.157</div>
+        <div class="lbl">Líquido/mês</div>
+        <div class="sub">após PAYE+USC+PRSI</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">€4.314</div>
+        <div class="lbl">Renda casal</div>
+        <div class="sub">2 × mínimo líquido</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">5 anos</div>
+        <div class="lbl">Para cidadania</div>
+        <div class="sub">naturalização irlandesa</div>
+      </div>
+    </div>
+    <div class="hero-alert">
+      <span>⚠️</span>
+      <span><strong>Correção de dados:</strong> O salário mínimo líquido correto é <strong>€2.157/mês</strong> (não €1.938 como divulgado anteriormente). Validado via salaryaftertax.com com taxas Budget 2026.</span>
+    </div>
+  </div>
+
+  <!-- YouTube Banner -->
+  <a href="https://www.youtube.com/@nos.viajante" target="_blank" class="yt-banner">
+    <div class="yt-play">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+    <div class="yt-info">
+      <h3>Acompanhe nossa jornada em tempo real no YouTube</h3>
+      <p>Vídeos sobre a mudança, vida em Dublin, custo real do dia a dia, trabalho, pubs e muito mais. Tudo na perspectiva de um casal brasileiro.</p>
+      <span class="yt-handle">@nos.viajante</span>
+    </div>
+    <div class="yt-cta">Inscrever-se ▶</div>
+  </a>
+</div>
+
+<!-- ─── CLIMA ─────────────────────────────────── -->
+<div class="section" id="clima">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D6EAF8">🌦️</div>
+    <div>
+      <div class="section-title">Clima de Dublin</div>
+      <div class="section-sub">4 estações em 1 dia — prepare-se para o inesperado</div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <span class="icon">⚠️</span>
+    <p><strong>Regra de ouro:</strong> SEMPRE leve jaqueta impermeável. Esqueça guarda-chuvas — o vento quebrará qualquer um. Use capuz. Chuva + vento é a combinação mais comum em Dublin.</p>
+  </div>
+
+  <div class="card" style="overflow:hidden;padding:0;">
+    <div class="weather-strip">
+      <div class="month-cell" style="background:#EBF5FB"><div class="month-name">JAN</div><div class="month-temp" style="color:#2E86C1">5°</div><div class="month-rain">🌧️🌧️</div></div>
+      <div class="month-cell" style="background:#EBF5FB"><div class="month-name">FEV</div><div class="month-temp" style="color:#2E86C1">6°</div><div class="month-rain">🌧️🌧️</div></div>
+      <div class="month-cell" style="background:#E8F8F5"><div class="month-name">MAR</div><div class="month-temp" style="color:#1A8372">8°</div><div class="month-rain">🌧️</div></div>
+      <div class="month-cell" style="background:#EAFAF1"><div class="month-name">ABR</div><div class="month-temp" style="color:#1E8449">10°</div><div class="month-rain">🌦️</div></div>
+      <div class="month-cell" style="background:#FDFDE7"><div class="month-name">MAI</div><div class="month-temp" style="color:#9A7D0A">14°</div><div class="month-rain">☁️</div></div>
+      <div class="month-cell" style="background:#FFF9E8"><div class="month-name">JUN</div><div class="month-temp" style="color:#B7770D">17°</div><div class="month-rain">🌤️</div></div>
+      <div class="month-cell" style="background:#FFF3E0"><div class="month-name">JUL</div><div class="month-temp" style="color:#D35400">19°</div><div class="month-rain">⛅</div></div>
+      <div class="month-cell" style="background:#FFF3E0"><div class="month-name">AGO</div><div class="month-temp" style="color:#D35400">19°</div><div class="month-rain">🌦️</div></div>
+      <div class="month-cell" style="background:#FDFDE7"><div class="month-name">SET</div><div class="month-temp" style="color:#9A7D0A">16°</div><div class="month-rain">🌧️</div></div>
+      <div class="month-cell" style="background:#EAFAF1"><div class="month-name">OUT</div><div class="month-temp" style="color:#1E8449">12°</div><div class="month-rain">🌧️🌧️</div></div>
+      <div class="month-cell" style="background:#E8F8F5"><div class="month-name">NOV</div><div class="month-temp" style="color:#1A8372">8°</div><div class="month-rain">🌧️🌧️</div></div>
+      <div class="month-cell" style="background:#EBF5FB"><div class="month-name">DEZ</div><div class="month-temp" style="color:#2E86C1">6°</div><div class="month-rain">🌧️🌧️</div></div>
+    </div>
+  </div>
+
+  <div class="card-grid cols3 mt16">
+    <div class="card" style="border-top:3px solid #2E86C1">
+      <h4>❄️ Inverno (Nov–Mar)</h4>
+      <p class="mt8" style="font-size:13px;color:var(--muted)">3–8°C. Frio, chuvoso, pouca luz. Até 8h de sol em dezembro. Aquecimento central essencial — consta no aluguel ou é pago.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green-light)">
+      <h4>🌱 Primavera/Outono</h4>
+      <p class="mt8" style="font-size:13px;color:var(--muted)">8–14°C. O Dublin mais bonito — verde intenso, flores. Ainda chuvoso mas com pausas de sol. Melhor época para explorar.</p>
+    </div>
+    <div class="card" style="border-top:3px solid #F4A261">
+      <h4>☀️ Verão (Jun–Ago)</h4>
+      <p class="mt8" style="font-size:13px;color:var(--muted)">15–19°C. Dias longos (até 17h de luz). Pode chover a qualquer hora. Aproveite cada dia de sol — é raro e especial.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PPS ─────────────────────────────────── -->
+<div class="section" id="pps">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">📄</div>
+    <div>
+      <div class="section-title">PPS Number — Prioridade #1</div>
+      <div class="section-sub">Sem PPS você paga imposto de emergência: 40% + 8% USC = 48% do salário</div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <span class="icon">🚨</span>
+    <p><strong>Sem PPS Number, o imposto de emergência é 48% do salário.</strong> Em €2.453 bruto, você recebe apenas €1.275 em vez de €2.157. Solicite imediatamente ao chegar.</p>
+  </div>
+
+  <div class="card">
+    <h3>Passo a passo — PPS Number (gratuito)</h3>
+    <div class="timeline mt12">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--blue)"></div>
+        <h4>1 — Criar conta em MyGovID.ie</h4>
+        <p>Acesse <a href="https://www.mygovid.ie" target="_blank">mygovid.ie</a> e crie conta com email. Necessário para todos os serviços gov online.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--blue)"></div>
+        <h4>2 — Solicitar PPS online em mywelfare.ie</h4>
+        <p>Link direto: <a href="https://www.gov.ie/en/service/12e6de" target="_blank">gov.ie/en/service/12e6de</a>. Upload de passaporte + comprovante de endereço (máx. 3 meses).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--amber)"></div>
+        <h4>3 — Visita presencial ao PPS Allocation Centre</h4>
+        <p>Agendar online. Leve passaporte original, comprovante de endereço e carta do empregador (se tiver).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--green-light)"></div>
+        <h4>4 — Receber carta com PPS Number (2–6 semanas)</h4>
+        <p>Número de 7 dígitos + 1–2 letras. Guarde com cuidado — é usado para tudo.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--green-mid)"></div>
+        <h4>5 — Registrar na Revenue</h4>
+        <p>Acesse <a href="https://www.revenue.ie" target="_blank">revenue.ie</a> → myAccount → adicionar emprego → confirmar tax credits. Isso garante o desconto correto de imposto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>Salário mínimo 2026 — números validados</h3>
+    <div class="stat-row mt12">
+      <div class="stat-card">
+        <div class="val text-green">€14,15</div>
+        <div class="lbl">por hora</div>
+        <div class="sub">desde jan 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="val" style="color:var(--blue)">€2.453</div>
+        <div class="lbl">Bruto/mês</div>
+        <div class="sub">40h semanais</div>
+      </div>
+      <div class="stat-card">
+        <div class="val text-green">€2.157</div>
+        <div class="lbl">Líquido/mês ✓</div>
+        <div class="sub">após todos os impostos</div>
+      </div>
+      <div class="stat-card">
+        <div class="val" style="color:var(--muted)">12,1%</div>
+        <div class="lbl">Impostos totais</div>
+        <div class="sub">PAYE + USC + PRSI</div>
+      </div>
+    </div>
+    <div class="callout callout-green mt12">
+      <span class="icon">✅</span>
+      <p><strong>Nota sobre impostos baixos no mínimo:</strong> Na Irlanda, os trabalhadores no salário mínimo pagam proporcionalmente poucos impostos graças aos tax credits (Personal + Employee = €3.550/ano). Por isso a taxa efetiva é de apenas ~12%, muito menor que em países europeus similares.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── BANCO ──────────────────────────────── -->
+<div class="section" id="banco">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D6EAF8">🏦</div>
+    <div>
+      <div class="section-title">Contas Bancárias</div>
+      <div class="section-sub">O que abrir antes de chegar e o que espera na Irlanda</div>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead><tr><th>Banco</th><th>Quando abrir</th><th>Custo</th><th>Melhor para</th><th>IBAN</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td><strong>Revolut</strong> ⭐</td><td>No Brasil, antes de viajar</td><td>Grátis (conta básica)</td><td>Chegada imediata, uso diário</td><td>Sim (LT/IE)</td></tr>
+      <tr><td><strong>Wise</strong> ⭐</td><td>No Brasil, antes de viajar</td><td>€7 cartão físico</td><td>Enviar dinheiro ao Brasil (câmbio real)</td><td>Sim (EU)</td></tr>
+      <tr><td><strong>N26</strong></td><td>Antes de chegar</td><td>Grátis</td><td>Alternativa digital europeia</td><td>Sim (DE)</td></tr>
+      <tr><td><strong>AIB</strong></td><td>Após PPS + endereço</td><td>€0 (saldo ≥€2.500) ou €4/mês</td><td>Histórico bancário irlandês</td><td>Sim (IE)</td></tr>
+      <tr><td><strong>Bank of Ireland</strong></td><td>Após PPS + endereço</td><td>€6/mês ou €0 condições</td><td>Histórico e crédito local</td><td>Sim (IE)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card mt16">
+    <h3>💱 Wise — melhor para mandar dinheiro ao Brasil</h3>
+    <div class="card-grid cols2 mt12">
+      <div>
+        <ul class="dots">
+          <li>Taxa de câmbio: <strong>taxa média de mercado</strong> (sem margem)</li>
+          <li>Taxa fixa por transferência: ~0,35–0,65%</li>
+          <li>Transferência de €2.000: economiza €60–80 vs banco tradicional</li>
+          <li>IBAN europeu para receber salário na Irlanda</li>
+          <li>Cartão físico Mastercard aceito em todo lugar</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="dots">
+          <li>Abrir conta: app iOS/Android, 10 minutos</li>
+          <li>Documentos: passaporte + selfie</li>
+          <li>Verificação: 1–3 dias úteis</li>
+          <li>Cartão físico: €7 (opcional, recomendado)</li>
+          <li>Site: <a href="https://wise.com" target="_blank">wise.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CHIP ──────────────────────────────── -->
+<div class="section" id="chip">
+  <div class="section-header">
+    <div class="section-icon" style="background:#E8DAEF">📱</div>
+    <div>
+      <div class="section-title">Chip de Celular</div>
+      <div class="section-sub">Melhores opções para recém-chegados</div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Operadora</th><th>Plano</th><th>Dados</th><th>Rede</th><th>Recomendado para</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td><strong>Tesco Mobile</strong> ⭐</td><td>€15/mês</td><td>10GB + ilimitado</td><td>Three</td><td>Chegada imediata — comprar no Tesco</td></tr>
+      <tr><td><strong>GoMo</strong></td><td>€9,99/mês</td><td>Dados ilimitados</td><td>Eir</td><td>Melhor custo-benefício para moradores</td></tr>
+      <tr><td><strong>Three</strong></td><td>€20/mês</td><td>5G ilimitado</td><td>Three</td><td>Melhor cobertura 5G em Dublin</td></tr>
+      <tr><td><strong>Vodafone</strong></td><td>€25/mês</td><td>30GB+</td><td>Vodafone</td><td>Cobertura nacional mais uniforme</td></tr>
+    </tbody>
+  </table>
+  <div class="callout callout-gold mt16">
+    <span class="icon">💡</span>
+    <p><strong>Estratégia:</strong> Chegue com o Revolut para pagamentos e compre um chip da Tesco Mobile (pré-pago) no primeiro Tesco ao sair do aeroporto. Depois migre para GoMo quando tiver endereço fixo para o envio do SIM.</p>
+  </div>
+</div>
+
+<!-- ─── CIDADÃO EU ─────────────────────────── -->
+<div class="section" id="cidadao-eu">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">🇪🇺</div>
+    <div>
+      <div class="section-title">Cidadão EU (não irlandês) na Irlanda</div>
+      <div class="section-sub">Direitos automáticos, documentos necessários e caminho para cidadania irlandesa</div>
+    </div>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="icon">✅</span>
+    <p><strong>Cidadão de qualquer país da UE/EEA pode viver e trabalhar na Irlanda sem visto, permit ou IRP Card.</strong> Garantido pela Diretiva EU 2004/38/EC. Basta o passaporte EU válido.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="val text-green">✔</div><div class="lbl">Trabalho livre</div><div class="sub">qualquer emprego</div></div>
+    <div class="stat-card"><div class="val text-green">€0</div><div class="lbl">Taxa de imigração</div><div class="sub">sem IRP obrigatório</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--blue)">5 anos</div><div class="lbl">Para naturalização</div><div class="sub">residência reckonável</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--gold)">€175</div><div class="lbl">Taxa naturalização</div><div class="sub">após 5 anos</div></div>
+  </div>
+
+  <div class="card-grid cols2">
+    <div class="card">
+      <h3>📋 O que fazer ao chegar</h3>
+      <table class="data-table mt12">
+        <thead><tr><th>Passo</th><th>Obrigatório?</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PPS Number</strong></td><td><span class="badge badge-red">Obrigatório</span></td></tr>
+          <tr><td><strong>Registro na Revenue</strong></td><td><span class="badge badge-red">Obrigatório</span></td></tr>
+          <tr><td><strong>Conta bancária</strong></td><td><span class="badge badge-red">Obrigatório na prática</span></td></tr>
+          <tr><td><strong>IRP Card</strong></td><td><span class="badge badge-green">Não precisa</span></td></tr>
+          <tr><td><strong>Employment Permit</strong></td><td><span class="badge badge-green">Não precisa</span></td></tr>
+          <tr><td><strong>Passaporte EU válido</strong></td><td><span class="badge badge-red">Manter válido sempre</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>🇮🇪 Caminho para passaporte irlandês</h3>
+      <div class="timeline mt12">
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--blue)"></div>
+          <h4>2026 → Chegada e início de residência</h4>
+          <p>Começa a acumular residência reckonável automaticamente</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--amber)"></div>
+          <h4>2027–2030 → 4 anos continuados</h4>
+          <p>Manter residência legal. Guardar evidências (contratos, holerites, contas)</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--green-light)"></div>
+          <h4>2031 → Solicitar naturalização</h4>
+          <p>5 anos de residência + 1 ano contínuo antes. Taxa: €175. Prazo: 12–18 meses</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--gold)"></div>
+          <h4>2032/33 → Passaporte irlandês</h4>
+          <p>€75. 4–8 semanas. Acesso a +190 países. Dupla cidadania permitida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber mt16">
+    <span class="icon">⚠️</span>
+    <p><strong>Irlanda NÃO é Schengen.</strong> Para visitar França, Espanha, Alemanha etc., cidadão EU usa o passaporte do país de origem. O cônjuge com apenas Stamp 4EUFam pode precisar de visto Schengen separado — até obter passaporte EU ou irlandês.</p>
+  </div>
+</div>
+
+<!-- ─── CÔNJUGE EU TREATY ──────────────────── -->
+<div class="section" id="conjuge-eu">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FDEBD0">💑</div>
+    <div>
+      <div class="section-title">Cônjuge Brasileiro de Cidadão EU — EU Treaty Rights</div>
+      <div class="section-sub">Como regularizar o parceiro não-EU. Sem requisito mínimo de renda!</div>
+    </div>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="icon">✅</span>
+    <p><strong>EU Treaty Rights (Diretiva 2004/38/EC):</strong> O cônjuge/parceiro de um cidadão EU não-irlandês tem direito a residir e trabalhar na Irlanda sem Employment Permit. Diferente do cônjuge de irlandês — sem requisito mínimo de renda do patrocinador.</p>
+  </div>
+
+  <div class="card-grid cols2">
+    <div class="card" style="border-left:4px solid var(--green-light)">
+      <h4 class="text-green">✅ O que o cônjuge brasileiro recebe</h4>
+      <ul class="dots mt8">
+        <li><strong>Stamp 4EUFam</strong> — trabalha sem Employment Permit</li>
+        <li>Acesso a serviços públicos (saúde, educação)</li>
+        <li>Após 5 anos → residência permanente</li>
+        <li>Após 5 anos → pode pedir naturalização irlandesa</li>
+        <li>Renovável enquanto parceiro EU estiver na Irlanda</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h4 class="text-blue">📋 Documentos necessários</h4>
+      <ul class="dots mt8">
+        <li>Passaportes de ambos</li>
+        <li>Certidão de casamento (com tradução juramentada)</li>
+        <li>Prova que o cônjuge EU exerce Treaty Rights (contrato + holerites)</li>
+        <li>Comprovante de endereço comum</li>
+        <li>Fotos 3×3</li>
+        <li>Taxa IRP: <strong>€300</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>📋 Processo passo a passo</h3>
+    <div class="timeline mt12">
+      <div class="tl-item"><div class="tl-dot" style="background:var(--blue)"></div><h4>Chegada (sem visto para brasileiros)</h4><p>Informe que veio residir como cônjuge de cidadão EU. Recebe stamp de entrada de 90 dias.</p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--blue)"></div><h4>Submeter EUTR1 ao ISD (dentro de 90 dias)</h4><p>Portal: <a href="https://www.irishimmigration.ie/coming-to-join-family-in-ireland/joining-an-eea-or-swiss-national/eu-treaty-rights/" target="_blank">irishimmigration.ie →</a></p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--amber)"></div><h4>Stamp 4EUFam temporário</h4><p>Emitido em semanas se documentação OK. Já permite trabalhar legalmente enquanto aguarda decisão definitiva.</p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--green-light)"></div><h4>IRP Card definitivo</h4><p>Prazo total 6–12 meses. Stamp 4EUFam válido enquanto parceiro EU morar na Irlanda.</p></div>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>⚖️ Comparação: EU Treaty vs Cônjuge de Irlandês</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Aspecto</th><th>EU Treaty Rights</th><th>Cônjuge de Irlandês</th></tr></thead>
+      <tbody>
+        <tr><td>Requisito de renda</td><td><span class="badge badge-green">Sem mínimo</span></td><td><span class="badge badge-amber">€40.000 em 3 anos</span></td></tr>
+        <tr><td>Stamp recebido</td><td>Stamp 4EUFam</td><td>Stamp 4</td></tr>
+        <tr><td>Direito de trabalhar</td><td><span class="badge badge-green">Sim, sem permit</span></td><td><span class="badge badge-green">Sim, sem permit</span></td></tr>
+        <tr><td>Para naturalização</td><td>5 anos</td><td>3 anos de casamento + residência</td></tr>
+        <tr><td>Dependência do patrocinador</td><td><span class="badge badge-amber">Sim (parceiro deve permanecer)</span></td><td><span class="badge badge-green">Independente após 3 anos</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── CÔNJUGE IRLANDÊS ───────────────────── -->
+<div class="section" id="conjuge-irlandes">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D6EAF8">💍</div>
+    <div>
+      <div class="section-title">Cônjuge de Cidadão Irlandês</div>
+      <div class="section-sub">Stamp 4 + caminho para naturalização em 3 anos</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="val text-amber">€40.000</div><div class="lbl">Renda mínima exigida</div><div class="sub">patrocinador, últimos 3 anos</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--green-bright)">€27.168</div><div class="lbl">Mínimo anual 2026</div><div class="sub">bem acima do exigido ✓</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--blue)">€300</div><div class="lbl">Taxa IRP</div><div class="sub">por pessoa</div></div>
+    <div class="stat-card"><div class="val text-green">3 anos</div><div class="lbl">Para naturalização</div><div class="sub">em vez de 5 para outros</div></div>
+  </div>
+
+  <div class="callout callout-amber">
+    <span class="icon">📋</span>
+    <p><strong>Desde nov/2025 (nova regra):</strong> o cônjuge irlandês deve comprovar renda bruta de pelo menos €40.000 nos 3 anos anteriores. Salário mínimo 2026 = €27.168/ano — já supera o mínimo exigido.</p>
+  </div>
+
+  <div class="card">
+    <h3>📋 Passo a passo</h3>
+    <div class="timeline mt12">
+      <div class="tl-item"><div class="tl-dot" style="background:var(--blue)"></div><h4>Chegada sem visto</h4><p>Brasileiros não precisam de visto para entrar. Informe ao oficial que veio como cônjuge de irlandês.</p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--blue)"></div><h4>Agendar Burgh Quay Registration Office</h4><p>Os dois cônjuges comparecem juntos. <a href="https://www.irishimmigration.ie/registering-your-immigration-permission/burgh-quay-registration-office/" target="_blank">Agendar online →</a></p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--blue)"></div><h4>Documentos (dentro de 90 dias)</h4><p>Certidão de casamento original + passaportes + comprovante de endereço comum + fotos + €300</p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--green-light)"></div><h4>Recebe Stamp 4</h4><p>Válido por 3 anos. Trabalha sem Employment Permit em qualquer função.</p></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--gold)"></div><h4>Após 3 anos → Naturalização</h4><p>3 anos de casamento + 3 anos de residência → passaporte irlandês. Taxa €175.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FBR ───────────────────────────────── -->
+<div class="section" id="fbr">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FDEBD0">🍀</div>
+    <div>
+      <div class="section-title">Descendência Irlandesa — Foreign Births Register</div>
+      <div class="section-sub">Avô ou avó nascido na Irlanda? Você pode ser cidadão irlandês</div>
+    </div>
+  </div>
+
+  <div class="card-grid cols2">
+    <div class="card">
+      <h3>📋 Requisitos</h3>
+      <ul class="dots mt8">
+        <li>Um avô/avó nascido na ilha da Irlanda (inclui Irlanda do Norte)</li>
+        <li>Seus pais não podem ter nascido na Irlanda (senão seria cidadania direta)</li>
+        <li>Registro deve ser feito antes de ter filhos, para transmiti-la</li>
+      </ul>
+      <div class="callout callout-gold mt12">
+        <span class="icon">💡</span>
+        <p>Irlanda do Norte (Ulster) conta igualmente. Verifique certidões de nascimento de avós com sobrenomes irlandeses.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>⏱️ Custos e prazos</h3>
+      <table class="data-table mt12">
+        <thead><tr><th>Item</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Taxa FBR (adulto)</td><td><strong>€278</strong></td></tr>
+          <tr><td>Taxa FBR (menor)</td><td><strong>€153</strong></td></tr>
+          <tr><td>Prazo de processamento</td><td>9–24 meses</td></tr>
+          <tr><td>Passaporte irlandês</td><td>€75 após aprovação</td></tr>
+          <tr><td>Passaporte prazo</td><td>4–8 semanas</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>📂 Documentos necessários</h3>
+    <ul class="dots">
+      <li>Certidão <strong>longa</strong> de nascimento do avô/avó (emitida pelo governo irlandês)</li>
+      <li>Certidão de casamento do avô/avó</li>
+      <li>Certidão de nascimento do seu pai/mãe (filho do avô/avó)</li>
+      <li>Certidão de nascimento sua</li>
+      <li>Certidão de óbito do avô/avó (se falecido)</li>
+      <li>Traduções juramentadas de documentos em português</li>
+    </ul>
+    <p class="mt12" style="font-size:13px">Formulário: <a href="https://www.dfa.ie/passports-citizenship/citizenship/" target="_blank">dfa.ie/passports-citizenship/citizenship/ →</a></p>
+  </div>
+</div>
+
+<!-- ─── MORADIA ───────────────────────────── -->
+<div class="section" id="moradia">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">🏠</div>
+    <div>
+      <div class="section-title">Moradia & Aluguel</div>
+      <div class="section-sub">Custos reais de Dublin 2026 validados pelo Daft.ie</div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <span class="icon">🔥</span>
+    <p><strong>Dublin tem crise de habitação séria.</strong> Há mais procura do que oferta. Agir rápido ao encontrar um imóvel é essencial. Inicie a busca antes de chegar usando Daft.ie e Myhome.ie.</p>
+  </div>
+
+  <table class="data-table">
+    <thead><tr><th>Tipo de moradia</th><th>Custo mensal</th><th>Ideal para</th><th>Plataforma</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td><strong>Quarto compartilhado (single)</strong></td><td>€800–1.200/pessoa</td><td>Recém-chegados, primeiros meses</td><td>Daft.ie, Facebook Groups</td></tr>
+      <tr><td><strong>Quarto duplo em casa compartilhada</strong></td><td>€1.000–1.400 (casal)</td><td>Casais querendo economizar</td><td>Daft.ie, Gumtree</td></tr>
+      <tr><td><strong>Apartamento 1 quarto (subúrbio)</strong></td><td>€1.750–2.100</td><td>Mais independência, boa relação custo-benefício</td><td>Daft.ie, Myhome.ie</td></tr>
+      <tr><td><strong>Apartamento 1 quarto (centro)</strong></td><td>€2.200–2.800</td><td>Quem quer caminhar ao trabalho</td><td>Daft.ie</td></tr>
+      <tr><td><strong>Apartamento 2 quartos</strong></td><td>€2.400–3.200</td><td>Casal com mais espaço</td><td>Daft.ie, Myhome.ie</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h4>💡 Melhores bairros custo-benefício</h4>
+      <ul class="dots mt8">
+        <li><strong>Tallaght (D24):</strong> barato, Luas Red Line</li>
+        <li><strong>Clondalkin:</strong> acessível, carro ideal</li>
+        <li><strong>Swords:</strong> subúrbio norte, Airport Rd, ônibus</li>
+        <li><strong>Drumcondra:</strong> bom transporte, próximo cidade</li>
+        <li><strong>Dún Laoghaire:</strong> DART, mar, mais caro mas bonito</li>
+        <li><strong>Rathmines/Ranelagh:</strong> popular entre jovens, caro</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>📋 Documentos para alugar</h4>
+      <ul class="dots mt8">
+        <li>Passaporte EU ou ID</li>
+        <li>Comprovante de emprego (carta do empregador)</li>
+        <li>Holerites recentes (ou contrato de trabalho)</li>
+        <li>Referência de empregador anterior</li>
+        <li>Depósito: geralmente 1–2 meses de antecipação</li>
+        <li>Registro no RTB (obrigatório para landlord)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ROUPAS ──────────────────────────────── -->
+<div class="section" id="roupas">
+  <div class="section-header">
+    <div class="section-icon" style="background:#E8DAEF">👕</div>
+    <div>
+      <div class="section-title">Roupas & Lavanderia</div>
+      <div class="section-sub">O que comprar, onde, quanto gastar e com que frequência lavar</div>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <span class="icon">🌧️</span>
+    <p><strong>Prioridades para Dublin:</strong> (1) Jaqueta impermeável com capuz hardshell — item mais importante. (2) Botas impermeáveis. (3) Base layer térmica Uniqlo Heattech. O resto é secundário.</p>
+  </div>
+
+  <div class="tabs" id="roupas-tabs">
+    <button class="tab-btn active" onclick="switchTab('roupas','homem',this)">👔 Homem</button>
+    <button class="tab-btn" onclick="switchTab('roupas','mulher',this)">👗 Mulher</button>
+    <button class="tab-btn" onclick="switchTab('roupas','lavanderia',this)">🧺 Lavanderia</button>
+    <button class="tab-btn" onclick="switchTab('roupas','lojas',this)">🏪 Onde comprar</button>
+  </div>
+
+  <div class="tab-panel active" id="roupas-homem">
+    <div class="tier-tabs" id="h-tiers">
+      <button class="tier-tab active" onclick="switchTier('h','economico',this)">💚 Econômico</button>
+      <button class="tier-tab" onclick="switchTier('h','medio',this)">💙 Custo-benefício</button>
+      <button class="tier-tab" onclick="switchTier('h','premium',this)">🟡 Intermediário+</button>
+    </div>
+    <div class="tier-panel active" id="h-economico">
+      <div class="card"><h3>💚 Econômico — €150–220 total</h3><p style="font-size:13px;color:var(--muted);margin-bottom:12px">Penneys (Primark) + H&M. Cobre o essencial para os primeiros meses.</p>
+      <div class="clothing-grid">
+        <div class="clothing-item"><h4>Camisetas (5×)</h4><div class="brand">Penneys</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€4–8 cada</div></div>
+        <div class="clothing-item"><h4>Calça jeans (2×)</h4><div class="brand">Penneys, H&M</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€18–28 cada</div></div>
+        <div class="clothing-item"><h4>Moletom (2×)</h4><div class="brand">Penneys, H&M</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€15–25 cada</div></div>
+        <div class="clothing-item"><h4>Jaqueta impermeável</h4><div class="brand">Decathlon, H&M</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€40–60</div></div>
+        <div class="clothing-item"><h4>Cueca + meia (packs)</h4><div class="brand">Penneys</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€10–20</div></div>
+        <div class="clothing-item"><h4>Tênis casual</h4><div class="brand">Penneys, TK Maxx</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€20–35</div></div>
+      </div></div>
+    </div>
+    <div class="tier-panel" id="h-medio">
+      <div class="card"><h3>💙 Custo-benefício — €300–480 total</h3><p style="font-size:13px;color:var(--muted);margin-bottom:12px">Uniqlo + Decathlon + Next + TK Maxx. Qualidade que dura anos.</p>
+      <div class="clothing-grid">
+        <div class="clothing-item"><h4>Base layer Heattech (3×)</h4><div class="brand">Uniqlo (Grafton St)</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€15–22 cada</div></div>
+        <div class="clothing-item"><h4>Jaqueta hardshell</h4><div class="brand">Decathlon Quechua</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€60–90</div></div>
+        <div class="clothing-item"><h4>Camisetas (5×)</h4><div class="brand">Uniqlo, Next</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€12–18 cada</div></div>
+        <div class="clothing-item"><h4>Calça chino (2×)</h4><div class="brand">Uniqlo, Next</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€30–45 cada</div></div>
+        <div class="clothing-item"><h4>Suéter merino</h4><div class="brand">Uniqlo, TK Maxx</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€35–55</div></div>
+        <div class="clothing-item"><h4>Botas impermeáveis</h4><div class="brand">TK Maxx, Decathlon</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€50–80</div></div>
+      </div></div>
+    </div>
+    <div class="tier-panel" id="h-premium">
+      <div class="card"><h3>🟡 Intermediário+ — €600–2.500 total</h3><p style="font-size:13px;color:var(--muted);margin-bottom:12px">Zara, COS, North Face, Barbour. Investimento a longo prazo.</p>
+      <div class="clothing-grid">
+        <div class="clothing-item"><h4>Casaco Barbour wax</h4><div class="brand">Barbour (Brown Thomas)</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€250–380</div></div>
+        <div class="clothing-item"><h4>Jaqueta North Face</h4><div class="brand">Brown Thomas, Sports Direct</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€150–280</div></div>
+        <div class="clothing-item"><h4>Aran Sweater</h4><div class="brand">Avoca, lojas tradicionais</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€80–160</div></div>
+        <div class="clothing-item"><h4>Botas qualidade</h4><div class="brand">Timberland, Merrell</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€120–200</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="roupas-mulher">
+    <div class="tier-tabs" id="m-tiers">
+      <button class="tier-tab active" onclick="switchTier('m','economico',this)">💚 Econômico</button>
+      <button class="tier-tab" onclick="switchTier('m','medio',this)">💙 Custo-benefício</button>
+      <button class="tier-tab" onclick="switchTier('m','premium',this)">🟡 Intermediário+</button>
+    </div>
+    <div class="tier-panel active" id="m-economico">
+      <div class="card"><h3>💚 Econômico — €160–240 total</h3>
+      <div class="clothing-grid">
+        <div class="clothing-item"><h4>Blusas/camisetas (5×)</h4><div class="brand">Penneys</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€5–10 cada</div></div>
+        <div class="clothing-item"><h4>Calça jeans (2×)</h4><div class="brand">Penneys, H&M</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€18–28 cada</div></div>
+        <div class="clothing-item"><h4>Cardigã (3×)</h4><div class="brand">Penneys, H&M</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€12–20 cada</div></div>
+        <div class="clothing-item"><h4>Meia-calça grossa (4×)</h4><div class="brand">Penneys</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€5–8 cada</div></div>
+        <div class="clothing-item"><h4>Jaqueta impermeável</h4><div class="brand">H&M, Penneys</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€35–55</div></div>
+        <div class="clothing-item"><h4>Botas básicas</h4><div class="brand">Penneys, TK Maxx</div><div class="clothing-price" style="background:var(--green-pale);color:var(--green-mid)">€25–40</div></div>
+      </div></div>
+    </div>
+    <div class="tier-panel" id="m-medio">
+      <div class="card"><h3>💙 Custo-benefício — €350–550 total</h3>
+      <div class="clothing-grid">
+        <div class="clothing-item"><h4>Heattech leggings (3×)</h4><div class="brand">Uniqlo</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€18–25 cada</div></div>
+        <div class="clothing-item"><h4>Jaqueta hardshell</h4><div class="brand">Decathlon, Uniqlo</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€65–100</div></div>
+        <div class="clothing-item"><h4>Suéter merino</h4><div class="brand">Uniqlo, M&S</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€35–60</div></div>
+        <div class="clothing-item"><h4>Botas impermeáveis</h4><div class="brand">TK Maxx, Next</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€60–100</div></div>
+        <div class="clothing-item"><h4>Casaco longo inverno</h4><div class="brand">Next, Dunnes, TK Maxx</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€55–90</div></div>
+        <div class="clothing-item"><h4>Lenço + luvas</h4><div class="brand">Uniqlo, TK Maxx</div><div class="clothing-price" style="background:var(--blue-pale);color:var(--blue)">€20–35</div></div>
+      </div></div>
+    </div>
+    <div class="tier-panel" id="m-premium">
+      <div class="card"><h3>🟡 Intermediário+ — €650–3.000 total</h3>
+      <div class="clothing-grid">
+        <div class="clothing-item"><h4>Casaco Barbour</h4><div class="brand">Brown Thomas</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€280–400</div></div>
+        <div class="clothing-item"><h4>Parka North Face</h4><div class="brand">Brown Thomas, Sports Direct</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€180–320</div></div>
+        <div class="clothing-item"><h4>Aran Sweater feminino</h4><div class="brand">Avoca, Kilkenny Design</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€90–180</div></div>
+        <div class="clothing-item"><h4>Ankle boots couro</h4><div class="brand">Brown Thomas, Dune</div><div class="clothing-price" style="background:var(--amber-pale);color:var(--amber)">€120–250</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="roupas-lavanderia">
+    <div class="card">
+      <h3>🧺 Com que frequência lavar cada peça</h3>
+      <table class="data-table mt12">
+        <thead><tr><th>Peça</th><th>Frequência</th><th>Temperatura</th><th>Dica para Dublin</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cueca / meia</strong></td><td><span class="badge badge-red">Diário</span></td><td>40°C</td><td>Separe escuras de claras</td></tr>
+          <tr><td><strong>Calcinha / sutiã</strong></td><td><span class="badge badge-red">1–2 usos</span></td><td>Mão ou delicado 30°C</td><td>Bolsinha de lavagem protege o aro</td></tr>
+          <tr><td><strong>Camiseta / blusa</strong></td><td><span class="badge badge-red">1–2 usos</span></td><td>30–40°C</td><td>Umidade aumenta odor — lave rápido</td></tr>
+          <tr><td><strong>Heattech / base layer</strong></td><td><span class="badge badge-red">1–2 usos</span></td><td>30°C (nunca 40°C)</td><td>Encolhe em temperatura alta!</td></tr>
+          <tr><td><strong>Calça jeans</strong></td><td><span class="badge badge-amber">3–5 usos</span></td><td>30°C frio</td><td>Lavar menos conserva o tecido</td></tr>
+          <tr><td><strong>Moletom / hoodie</strong></td><td><span class="badge badge-amber">3–5 usos</span></td><td>30°C</td><td>Secagem lenta — planeje com antecedência</td></tr>
+          <tr><td><strong>Suéter / cardigã de lã</strong></td><td><span class="badge badge-green">5–7 usos</span></td><td>Mão ou delicado 30°C</td><td>NUNCA centrifugue — deforma!</td></tr>
+          <tr><td><strong>Jaqueta impermeável</strong></td><td><span class="badge badge-green">10–15 usos</span></td><td>30°C delicado</td><td>Reaplique spray impermeabilizante após lavar</td></tr>
+          <tr><td><strong>Roupas de cama</strong></td><td><span class="badge badge-amber">1–2 semanas</span></td><td>60°C</td><td>Temperatura alta mata ácaros (clima úmido)</td></tr>
+          <tr><td><strong>Toalha de banho</strong></td><td><span class="badge badge-amber">3–4 usos</span></td><td>60°C</td><td>Seque bem após usar — mofo em Dublin é real</td></tr>
+        </tbody>
+      </table>
+      <div class="callout callout-amber mt16">
+        <span class="icon">☁️</span>
+        <p><strong>Arara de roupa indoor é essencial no inverno.</strong> Dublin é úmido — roupas levam 2–3× mais para secar do que no Brasil. Não calcule espaço no banheiro; instale arara no quarto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="roupas-lojas">
+    <div class="card">
+      <h3>🏪 Onde comprar roupas em Dublin</h3>
+      <table class="data-table mt12">
+        <thead><tr><th>Loja</th><th>Nível</th><th>Especialidade</th><th>Endereço principal</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>Penneys (Primark)</strong></td><td><span class="badge badge-green">Muito barato</span></td><td>Tudo básico — qualidade OK, preço imbatível</td><td>O'Connell St, Mary St</td></tr>
+          <tr><td><strong>Dealz</strong></td><td><span class="badge badge-green">Muito barato</span></td><td>Meias, roupa interior, básicos</td><td>Vários por Dublin</td></tr>
+          <tr><td><strong>H&M</strong></td><td><span class="badge badge-green">Barato</span></td><td>Moda casual, boa variedade</td><td>Grafton St, Dundrum</td></tr>
+          <tr class="hl"><td><strong>Uniqlo</strong></td><td><span class="badge badge-blue">Médio</span></td><td>Heattech, qualidade japonesa, essencial</td><td>Grafton St</td></tr>
+          <tr><td><strong>TK Maxx</strong></td><td><span class="badge badge-blue">Médio</span></td><td>Outlet — marcas premium a preço reduzido</td><td>Jervis, Dundrum</td></tr>
+          <tr><td><strong>Decathlon</strong></td><td><span class="badge badge-blue">Médio</span></td><td>Roupas técnicas, impermeáveis, esporte</td><td>Liffey Valley, Tallaght</td></tr>
+          <tr><td><strong>Next</strong></td><td><span class="badge badge-blue">Médio</span></td><td>Estilo britânico clássico, qualidade confiável</td><td>Grafton St e outros</td></tr>
+          <tr><td><strong>Brown Thomas</strong></td><td><span class="badge badge-amber">Premium</span></td><td>Barbour, North Face, marcas de luxo</td><td>Grafton St</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CASA ESSENCIAIS ────────────────────── -->
+<div class="section" id="casa">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">🛏️</div>
+    <div>
+      <div class="section-title">Itens Essenciais do Lar</div>
+      <div class="section-sub">O que comprar ao chegar — quarto, cozinha, banheiro e eletricidade</div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <span class="icon">🔌</span>
+    <p><strong>URGÊNCIA #1 — Adaptadores elétricos:</strong> A Irlanda usa <strong>Tipo G</strong> (3 pinos retangulares britânicos) — incompatível com plugues brasileiros (Tipo N) e europeus (Tipo C/F). Compre ANTES de plugar qualquer aparelho. Tensão: 230V. Aparelhos 127V queimam!</p>
+  </div>
+
+  <div class="card-grid cols2">
+    <div class="card" style="border-top:3px solid var(--red)">
+      <h4 style="color:var(--red)">🚨 Urgente — Dia 1</h4>
+      <table class="data-table mt12">
+        <thead><tr><th>Item</th><th>Onde</th><th>Preço</th></tr></thead>
+        <tbody>
+          <tr><td>Adaptador Tipo G (×3)</td><td>Argos, Curry's, aeroporto</td><td>€5–15</td></tr>
+          <tr><td>Edredom tog 10.5–13.5</td><td>Penneys, Dunnes, Ikea</td><td>€20–60</td></tr>
+          <tr><td>Capa + fronha (duvet set)</td><td>Penneys</td><td>€15–35</td></tr>
+          <tr><td>Lençol com elástico (×2)</td><td>Penneys, Dealz</td><td>€8–20 cada</td></tr>
+          <tr><td>Travesseiro (×2)</td><td>Penneys, Ikea</td><td>€8–20 cada</td></tr>
+          <tr><td>Toalhas (×4)</td><td>Penneys, Dunnes</td><td>€5–15 cada</td></tr>
+          <tr><td>Chaleira elétrica (kettle)</td><td>Argos, Dunnes</td><td>€15–35</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="border-top:3px solid var(--amber)">
+      <h4 class="text-amber">⏱️ Semana 1</h4>
+      <table class="data-table mt12">
+        <thead><tr><th>Item</th><th>Onde</th><th>Preço</th></tr></thead>
+        <tbody>
+          <tr><td>Panelas set (3 peças)</td><td>Dealz, Dunnes, Ikea</td><td>€15–40</td></tr>
+          <tr><td>Frigideira antiaderente</td><td>Dealz, Dunnes</td><td>€8–25</td></tr>
+          <tr><td>Pratos + talheres (set)</td><td>Dealz, Ikea</td><td>€10–25</td></tr>
+          <tr><td>Copos e canecas</td><td>Dealz, Ikea</td><td>€5–15</td></tr>
+          <tr><td>Faca + tábua</td><td>Dunnes, Ikea</td><td>€10–25</td></tr>
+          <tr><td>Arara de roupas indoor</td><td>Argos, Ikea, Dunnes</td><td>€10–25</td></tr>
+          <tr><td>Detergente + esponjas</td><td>Aldi, Lidl</td><td>€5–10</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout callout-gold mt16">
+    <span class="icon">☕</span>
+    <p><strong>A chaleira elétrica (kettle) é sagrada na Irlanda.</strong> Os irlandeses bebem chá múltiplas vezes ao dia. Compre no primeiro dia. Secador de cabelo: compre novo na Irlanda (€15–25 na Argos) em vez de trazer — tensão diferente e muito mais prático.</p>
+  </div>
+
+  <div class="callout callout-blue mt12">
+    <span class="icon">🛏️</span>
+    <p><strong>Tamanhos de cama (padrão UK/Irlanda):</strong> Single 90×190 | Double 135×190 | King 150×200 | Super King 180×200. Confirme o tamanho da cama antes de comprar as roupas de cama — é diferente do padrão brasileiro.</p>
+  </div>
+
+  <div class="card mt16">
+    <h3>💶 Custo estimado para equipar o lar — casal</h3>
+    <div class="stat-row">
+      <div class="stat-card"><div class="val text-green">€80–150</div><div class="lbl">Econômico</div><div class="sub">Dealz + Penneys + 2ª mão</div></div>
+      <div class="stat-card"><div class="val" style="color:var(--blue)">€200–350</div><div class="lbl">Intermediário</div><div class="sub">Dunnes + Ikea + Argos</div></div>
+      <div class="stat-card"><div class="val text-amber">€400–700</div><div class="lbl">Completo</div><div class="sub">Tudo novo, qualidade</div></div>
+    </div>
+    <p class="mt12" style="font-size:13px;color:var(--muted)">Facebook Marketplace Dublin tem ótimas pechinchas de segunda mão — edredons, panelas, móveis, tudo a €1–20. Vale muito pesquisar antes de comprar tudo novo.</p>
+  </div>
+</div>
+
+<!-- ─── ALIMENTAÇÃO ────────────────────────── -->
+<div class="section" id="alimentacao">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">🛒</div>
+    <div>
+      <div class="section-title">Supermercados & Alimentação em Casa</div>
+      <div class="section-sub">Onde comprar, quanto gastar e como montar uma rotina alimentar</div>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead><tr><th>Supermercado</th><th>Nível de preço</th><th>Custo semanal (casal)</th><th>Destaque</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td><strong>Aldi</strong> ⭐</td><td><span class="badge badge-green">Muito barato</span></td><td>€65–80</td><td>Melhor custo-benefício, frescos excelentes</td></tr>
+      <tr class="hl"><td><strong>Lidl</strong> ⭐</td><td><span class="badge badge-green">Muito barato</span></td><td>€65–85</td><td>Similar ao Aldi, boa padaria</td></tr>
+      <tr><td><strong>Dunnes Stores</strong></td><td><span class="badge badge-blue">Médio</span></td><td>€80–110</td><td>Carnes de qualidade, frios, pão fresco</td></tr>
+      <tr><td><strong>Tesco</strong></td><td><span class="badge badge-blue">Médio</span></td><td>€85–115</td><td>Mais completo, Tesco Express nos bairros</td></tr>
+      <tr><td><strong>Supervalu</strong></td><td><span class="badge badge-amber">Médio-caro</span></td><td>€95–130</td><td>Produtos locais e orgânicos</td></tr>
+      <tr><td><strong>Marks & Spencer</strong></td><td><span class="badge badge-amber">Caro</span></td><td>€130–180</td><td>Qualidade premium, produtos prontos</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card mt16">
+    <h3>📅 Estratégia semanal recomendada</h3>
+    <div class="card-grid cols3 mt12">
+      <div style="background:var(--green-pale);border-radius:var(--radius-sm);padding:14px">
+        <h4 class="text-green">🛒 Uma vez por semana</h4>
+        <p style="font-size:13px;margin-top:6px">Aldi ou Lidl — compra principal. Carnes, frutas, vegetais, laticínios, secos. ~€70–85 para o casal.</p>
+      </div>
+      <div style="background:var(--blue-pale);border-radius:var(--radius-sm);padding:14px">
+        <h4 class="text-blue">🏃 2–3× por semana</h4>
+        <p style="font-size:13px;margin-top:6px">Tesco Express ou Spar — reposição de frescos, pão, leite. €10–20 por visita.</p>
+      </div>
+      <div style="background:var(--amber-pale);border-radius:var(--radius-sm);padding:14px">
+        <h4 class="text-amber">🧹 Mensal</h4>
+        <p style="font-size:13px;margin-top:6px">Dealz — produtos de limpeza, papel higiênico, itens de higiene a granel. €20–35.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COMER FORA ─────────────────────────── -->
+<div class="section" id="comer-fora">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FDEBD0">🍽️</div>
+    <div>
+      <div class="section-title">Comer Fora em Dublin</div>
+      <div class="section-sub">4 faixas de preço — do chipper ao Michelin</div>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <span class="icon">💡</span>
+    <p>Dublin tem boa variedade: pub food, pizza, curry, sushi, brasileiro, etíope, coreano. <strong>Evite Temple Bar</strong> para comer — preços 30–50% mais altos que o resto da cidade. Vá para Camden St, Rathmines, Portobello, Stoneybatter ou South William Street.</p>
+  </div>
+
+  <div class="tabs" id="comida-tabs">
+    <button class="tab-btn active" onclick="switchTab('comida','ec',this)">💚 Econômico</button>
+    <button class="tab-btn" onclick="switchTab('comida','cb',this)">💙 Custo-benefício</button>
+    <button class="tab-btn" onclick="switchTab('comida','it',this)">🟡 Intermediário</button>
+    <button class="tab-btn" onclick="switchTab('comida','pm',this)">🔴 Premium</button>
+  </div>
+
+  <div class="tab-panel active" id="comida-ec">
+    <div class="card"><h3>💚 Econômico — €5–15 por pessoa</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Tipo</th><th>O que comer</th><th>€/pessoa</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Chipper (fish &amp; chips)</strong></td><td>Fish &amp; chips, battered sausage — tradição irlandesa</td><td>€8–12</td></tr>
+        <tr><td><strong>Deli Spar/Centra/Tesco Express</strong></td><td>Wrap, sanduíche quente, soup</td><td>€4–7</td></tr>
+        <tr><td><strong>Pizza by the slice</strong></td><td>Slice of Dublin, Mamma Mia</td><td>€4–7 por fatia</td></tr>
+        <tr><td><strong>Kebab / Falafel</strong></td><td>Doner, falafel pita</td><td>€7–11</td></tr>
+        <tr><td><strong>Boojum (burrito)</strong></td><td>Burrito mexicano + guac</td><td>€9–13</td></tr>
+        <tr><td><strong>McDonald's / KFC</strong></td><td>Combo meal</td><td>€9–12</td></tr>
+        <tr><td><strong>Café + torrada</strong></td><td>Coffee + toast — almoço leve</td><td>€5–8</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-gold mt12">
+      <span class="icon">⭐</span>
+      <p><strong>Leo Burdock (Werburg St):</strong> O fish & chips mais famoso de Dublin desde 1913. ~€10. Comer de pé na rua é a tradição. Não perca.</p>
+    </div></div>
+  </div>
+
+  <div class="tab-panel" id="comida-cb">
+    <div class="card"><h3>💙 Custo-benefício — €15–25 por pessoa</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Tipo</th><th>O que esperar</th><th>€/pessoa</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Pub food</strong></td><td>Fish &amp; chips, burger, Irish stew, chicken curry — refeição completa</td><td>€15–22</td></tr>
+        <tr><td><strong>Pizza italiana casual</strong></td><td>Pizza + bebida (Paulie's, Pi)</td><td>€15–22</td></tr>
+        <tr><td><strong>Indian curry</strong></td><td>Curry + naan + lassi (Kinara, Asha's)</td><td>€18–24</td></tr>
+        <tr><td><strong>Carvery lunch</strong></td><td>Self-service ao meio-dia: carne + batata + legumes</td><td>€10–15</td></tr>
+        <tr><td><strong>Ramen / Japonês</strong></td><td>Ramen completo (Yamamori, Musashi)</td><td>€15–22</td></tr>
+        <tr><td><strong>Burger artesanal</strong></td><td>Smash burger (Bunsen, Brother Hubbard)</td><td>€14–20</td></tr>
+        <tr><td><strong>Brunch de café</strong></td><td>Full Irish, avocado toast, eggs benedict</td><td>€12–18</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-blue mt12">
+      <span class="icon">💡</span>
+      <p><strong>Early Bird menus:</strong> antes das 19h, muitos restaurantes oferecem 2–3 pratos por €20–28/pessoa — o que normalmente custaria €35–45. Ótima dica para jantares especiais economizando.</p>
+    </div></div>
+  </div>
+
+  <div class="tab-panel" id="comida-it">
+    <div class="card"><h3>🟡 Intermediário — €25–55 por pessoa</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Tipo / Local</th><th>O que esperar</th><th>€/pessoa</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Restaurante com serviço completo</strong></td><td>Entrada + prato principal + sobremesa</td><td>€30–50</td></tr>
+        <tr><td><strong>Seafood / frutos do mar</strong></td><td>Mussels, salmon, crab claws</td><td>€25–45</td></tr>
+        <tr><td><strong>Steakhouse</strong></td><td>Corte Irish beef, batata, molho</td><td>€35–55</td></tr>
+        <tr><td><strong>Asian fusion</strong></td><td>Thai, vietnamita, coreano premium</td><td>€25–40</td></tr>
+        <tr><td><strong>Gastro pub</strong></td><td>Pub com cozinha elaborada, ambiente melhor</td><td>€25–40</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="tab-panel" id="comida-pm">
+    <div class="card"><h3>🔴 Premium / Fine Dining — €60–180+ por pessoa</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Restaurante</th><th>Tipo</th><th>€/pessoa</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Chapter One</strong></td><td>Michelin ★★ — tasting menu irlandês</td><td>€120–160</td></tr>
+        <tr><td><strong>Liath</strong></td><td>Michelin ★★ — Blackrock, sazonal</td><td>€100–150</td></tr>
+        <tr><td><strong>Forest Avenue</strong></td><td>Michelin ★ — bairro gastronômico</td><td>€80–120</td></tr>
+        <tr><td><strong>Chapter One — Pre-Theatre</strong></td><td>Menu especial antes das 19h — ótimo valor</td><td>~€50</td></tr>
+        <tr><td><strong>Restaurant Patrick Guilbaud</strong></td><td>Michelin ★★ — referência histórica</td><td>€150–200</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-gold mt12">
+      <span class="icon">🌟</span>
+      <p>O pre-theatre menu do Chapter One (★★ Michelin) a ~€50 por pessoa é uma das melhores relações qualidade-preço de Dublin. Reserve com meses de antecedência.</p>
+    </div></div>
+  </div>
+</div>
+
+<!-- ─── CARRO ──────────────────────────────── -->
+<div class="section" id="carro">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FDEBD0">🚗</div>
+    <div>
+      <div class="section-title">Carro & CNH</div>
+      <div class="section-sub">Melhores modelos, custos reais e a situação da carteira brasileira</div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <span class="icon">🚦</span>
+    <p><strong>Na Irlanda dirige-se pelo lado ESQUERDO</strong> — volante à direita. Adaptação leva semanas. Não dirija cansado nos primeiros dias. Reduza velocidade especialmente em estradas rurais.</p>
+  </div>
+
+  <div class="card">
+    <h3>🚗 Melhores carros usados para recém-chegados</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Modelo</th><th>Preço usado</th><th>Seguro médio/ano</th><th>Destaque</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Dacia Sandero</strong> ⭐</td><td>€6.000–12.000</td><td>~€494</td><td>Mais barato para segurar, peças simples</td></tr>
+        <tr><td><strong>Toyota Yaris</strong></td><td>€8.000–18.000</td><td>~€564</td><td>Score 89/100 confiabilidade, econômico</td></tr>
+        <tr><td><strong>Skoda Octavia</strong></td><td>€9.000–22.000</td><td>~€536</td><td>Peças VW, longevidade comprovada</td></tr>
+        <tr><td><strong>Toyota Corolla Híbrido</strong></td><td>€10.000–22.000</td><td>~€548</td><td>5–6L/100km, motor tax baixo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h4>💰 Custos anuais obrigatórios do carro</h4>
+      <table class="data-table mt8">
+        <thead><tr><th>Item</th><th>Custo</th></tr></thead>
+        <tbody>
+          <tr><td>Seguro (novo motorista)</td><td>€800–2.000/ano</td></tr>
+          <tr><td>Motor Tax (médio)</td><td>€170–200/ano</td></tr>
+          <tr><td>NCT (a cada 2 anos)</td><td>€60</td></tr>
+          <tr><td>Combustível médio</td><td>€100–180/mês</td></tr>
+          <tr><td>Manutenção/imprevistos</td><td>€500–800/ano</td></tr>
+          <tr class="hl"><td><strong>Total anual estimado</strong></td><td><strong>€2.700–4.000</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h4>🪪 CNH brasileira na Irlanda</h4>
+      <ul class="dots mt8">
+        <li><strong>Como turista (até 12 meses):</strong> CNH brasileira + PID = pode dirigir</li>
+        <li><strong>Brasil NÃO está na lista de países reconhecidos</strong> para troca direta</li>
+        <li>Deve fazer: teoria (€45) + Learner Permit (€35) + EDT + teste prático (€85)</li>
+        <li>Custo total do processo: ~€300–500</li>
+        <li>Link oficial: <a href="https://www.ndls.ie" target="_blank">ndls.ie</a></li>
+      </ul>
+      <div class="callout callout-amber mt12">
+        <span class="icon">💡</span>
+        <p>Espere ter 3–6 meses de histórico de emprego na Irlanda antes de comprar carro. O seguro cai significativamente com histórico comprovado no país.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── DIFERENÇAS CULTURAIS ──────────────── -->
+<div class="section" id="dicas">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FAEEDA">🍀</div>
+    <div>
+      <div class="section-title">Irlanda na Prática</div>
+      <div class="section-sub">Tudo que é diferente — tomadas, trânsito, gorjetas, costumes e vocabulário</div>
+    </div>
+  </div>
+
+  <div class="card-grid cols2">
+    <div class="card" style="border-top:3px solid var(--green-bright)">
+      <h4>🔌 Tomadas — Tipo G</h4>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">3 pinos retangulares, 230V/50Hz. Incompatível com Brasil (Tipo N) e Europa continental (Tipo C/F). Tomadas têm chave liga/desliga — não esqueça de ligar!</p>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Funciona só com adaptador:</strong> celular, laptop, tablet (bivolt)</li>
+        <li><strong>Precisa de transformador:</strong> secador 127V, ferro antigo</li>
+        <li><strong>Compre novo:</strong> secador (€15–25 na Argos)</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--blue)">
+      <h4>🚗 Trânsito — Lado ESQUERDO</h4>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">Volante à direita. Limites 2025: Motorway 120 | Nacional 100 | Regional 80 | Rural local 60 (desde fev/2025) | Urbano 50 | Residencial 30 km/h</p>
+      <ul class="dots mt8" style="font-size:13px">
+        <li>Multa por excesso: €80 + 3 penalty points</li>
+        <li>Bafômetro: 50mg/100ml (vs 60mg no Brasil)</li>
+        <li>Radar de semáforo em várias interseções de Dublin</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>🍺 Gorjetas (Tipping) — guia prático</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Situação</th><th>Esperada?</th><th>Quanto</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Restaurante (serviço de mesa)</strong></td><td><span class="badge badge-amber">Esperada se bom serviço</span></td><td>10–15%</td></tr>
+        <tr><td><strong>Pub — bebidas no balcão</strong></td><td><span class="badge badge-green">Não esperada</span></td><td>—</td></tr>
+        <tr><td><strong>Pub — serviço de mesa</strong></td><td><span class="badge badge-amber">Apreciada</span></td><td>€1–2 por rodada</td></tr>
+        <tr><td><strong>Café (balcão)</strong></td><td><span class="badge badge-green">Opcional</span></td><td>Moedas no pote</td></tr>
+        <tr><td><strong>Táxi / FreeNow</strong></td><td><span class="badge badge-amber">Apreciada</span></td><td>Arredonde ou 10%</td></tr>
+        <tr><td><strong>Ônibus / Luas</strong></td><td><span class="badge badge-green">Não</span></td><td>—</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-green mt12">
+      <span class="icon">💡</span>
+      <p>Gorjeta na Irlanda <strong>não é obrigatória</strong>. Funcionários recebem mínimo de €14,15/h e não dependem de gorjeta. Dê se o serviço foi bom — nunca por pressão.</p>
+    </div>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h4 class="text-green">✅ Costumes irlandeses — faça</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>"Grand"</strong> = OK/ótimo — palavra mais usada no país</li>
+        <li><strong>"Craic"</strong> (crack) = diversão, ambiente — "What's the craic?"</li>
+        <li>Rodada de drinks no pub: reveze quem paga para o grupo inteiro</li>
+        <li>Fila: respeite rigorosamente — furar é muito mal visto</li>
+        <li>"Slagging" = tirar sarro amigavelmente — sinal de aceitação</li>
+        <li>"Bye bye bye" ao telefone — repita antes de desligar</li>
+        <li>Falar do tempo como quebra-gelo — é sério, é cultura</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 class="text-red">❌ Costumes — evite</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Nunca chame de "inglês"</strong> quem é claramente irlandês</li>
+        <li>Não confunda Irlanda com Reino Unido — são orgulhosos da independência</li>
+        <li>Fumar em lugares fechados é ilegal (lei desde 2004)</li>
+        <li>Não use guarda-chuva — o vento quebrará e vai parecer turista</li>
+        <li>Não discuta política local nos primeiros meses</li>
+        <li>Não chegue atrasado sem avisar — pontualidade é valorizada</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>💬 Vocabulário irlandês essencial</h3>
+    <div class="card-grid cols2 mt12">
+      <table class="data-table">
+        <thead><tr><th>Expressão</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td><strong>"Grand"</strong></td><td>OK, ótimo, sem problema</td></tr>
+          <tr><td><strong>"Craic"</strong></td><td>Diversão, ambiente animado</td></tr>
+          <tr><td><strong>"Gaff"</strong></td><td>Casa, apartamento</td></tr>
+          <tr><td><strong>"Jacks"</strong></td><td>Banheiro</td></tr>
+          <tr><td><strong>"Gas"</strong></td><td>Engraçado ("That's gas!")</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <thead><tr><th>Expressão</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td><strong>"Deadly"</strong></td><td>Incrível, excelente</td></tr>
+          <tr><td><strong>"Story?"</strong></td><td>E aí? Como vai?</td></tr>
+          <tr><td><strong>"Giving out"</strong></td><td>Reclamar</td></tr>
+          <tr><td><strong>"Eejit"</strong></td><td>Idiota (carinhoso entre amigos)</td></tr>
+          <tr><td><strong>"Mind yourself"</strong></td><td>Cuide-se (despedida)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>🏥 Saúde — sistema público</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Serviço</th><th>Com Medical Card</th><th>Sem Medical Card</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>GP (médico clínico)</td><td><span class="badge badge-green">Grátis</span></td><td>€50–70/consulta</td></tr>
+        <tr><td>Emergência hospitalar</td><td><span class="badge badge-green">Grátis</span></td><td>€100/visita</td></tr>
+        <tr><td>Medicamentos prescritos</td><td><span class="badge badge-green">Grátis</span></td><td>€1,50/item (máx €15/mês)</td></tr>
+        <tr><td>Dentista</td><td><span class="badge badge-amber">Parcial</span></td><td>€40–100+ por consulta</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-green mt12">
+      <span class="icon">💡</span>
+      <p><strong>Medical Card:</strong> renda abaixo de €352/semana por pessoa = pode ter direito. Salário mínimo 2026 (~€497/semana bruto → ~€415 líquido) — verifique sua situação. Solicite em <a href="https://www.hse.ie/eng/services/list/1/schemes/mc/" target="_blank">hse.ie →</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TURÍSTICO ──────────────────────────── -->
+<div class="section" id="turistico">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">🏰</div>
+    <div>
+      <div class="section-title">Pontos Turísticos de Dublin</div>
+      <div class="section-sub">Preços 2026, atrações gratuitas e passeios de dia</div>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <span class="icon">🗓️</span>
+    <p>Como morador, você tem o luxo do tempo. Não precisa ver tudo de uma vez. Estratégia: <strong>Mês 1</strong> — gratuitas. <strong>Mês 2–3</strong> — Guinness + Kilmainham. <strong>Mês 4–6</strong> — Trinity + EPIC. Espaçar reduz o impacto no orçamento.</p>
+  </div>
+
+  <div class="card">
+    <h3>🆓 Gratuitas — sempre vale a pena</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Atração</th><th>Destaque</th><th>Localização</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>National Museum — Archaeology</strong></td><td>Ouro celta, múmias de turfa, Dublin Viking</td><td>Kildare St</td></tr>
+        <tr><td><strong>National Museum — Natural History</strong></td><td>"Dead Zoo" — taxidermia vitoriana intocada</td><td>Merrion St</td></tr>
+        <tr><td><strong>National Gallery of Ireland</strong></td><td>Caravaggio, Vermeer, Monet, artistas irlandeses</td><td>Merrion Sq W</td></tr>
+        <tr><td><strong>Phoenix Park</strong></td><td>Maior parque urbano da Europa — cervos selvagens</td><td>West Dublin</td></tr>
+        <tr><td><strong>Howth Cliffs Walk</strong></td><td>Vista épica da baía, puffins, frutos do mar no cais</td><td>DART 30 min</td></tr>
+        <tr><td><strong>St. Stephen's Green</strong></td><td>Parque vitoriano central — piquenique de verão</td><td>Grafton St</td></tr>
+        <tr><td><strong>Bray–Greystones Coastal Walk</strong></td><td>Caminhada costeira deslumbrante</td><td>DART 45 min</td></tr>
+        <tr><td><strong>Samuel Beckett Bridge</strong></td><td>Ícone moderno de Santiago Calatrava</td><td>Docklands</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card mt16">
+    <h3>🎟️ Pagas — preços adulto 2026</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Atração</th><th>Preço</th><th>O que inclui</th><th>Dica</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>🍺 Guinness Storehouse</strong> ⭐</td><td>€26–36</td><td>Tour 7 andares + pint Gravity Bar</td><td>Reserve online — dinâmico por horário</td></tr>
+        <tr><td><strong>⛓️ Kilmainham Gaol</strong> ⭐</td><td>~€8</td><td>Tour guiado 45 min + exposição 1916</td><td>Reserve com semanas — esgota sempre</td></tr>
+        <tr><td><strong>📚 Book of Kells / Trinity</strong></td><td>€16–23</td><td>Manuscrito séc. IX + Long Room Library</td><td>Reserve online, chegue cedo</td></tr>
+        <tr><td><strong>🏛️ EPIC — Emigration Museum</strong></td><td>€21</td><td>Museu interativo (European Museum of the Year)</td><td>Ir com o Jeanie Johnston ship</td></tr>
+        <tr><td><strong>🥃 Jameson Distillery</strong></td><td>€26–30</td><td>Tour + degustação de whiskey</td><td>Combina bem com Guinness (tour duplo)</td></tr>
+        <tr><td><strong>🏰 Dublin Castle — State Apts</strong></td><td>€10–12</td><td>Apartamentos reais, Chapel Royal</td><td>Pátio externo é grátis</td></tr>
+        <tr><td><strong>⛪ St. Patrick's Cathedral</strong></td><td>€8–10</td><td>Catedral séc. XIII — maior da Irlanda</td><td>Grátis domingo de manhã para serviço</td></tr>
+        <tr><td><strong>🧬 Little Museum of Dublin</strong></td><td>€12</td><td>Dublin no séc. XX, tour guiado 1h</td><td>Muito bem avaliado pelos moradores</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card mt16">
+    <h3>🌍 Passeios de dia a partir de Dublin</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Destino</th><th>Transporte</th><th>Custo</th><th>Destaque</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Howth</strong></td><td>DART (~30 min)</td><td>€6–8 ida/volta</td><td>Penhasco, farol, frutos do mar, trilha</td></tr>
+        <tr><td><strong>Glendalough / Wicklow</strong></td><td>Ônibus turístico ou carro (1h)</td><td>€20–30</td><td>Mosteiro séc. VI + lagos glaciais</td></tr>
+        <tr><td><strong>Kilkenny</strong></td><td>Bus Éireann (~90 min)</td><td>€15–25</td><td>Castelo medieval, centro histórico</td></tr>
+        <tr><td><strong>Cliffs of Moher</strong></td><td>Ônibus turístico (3h)</td><td>€35–50 + €8 entrada</td><td>Falésias de 214m — inesquecível</td></tr>
+        <tr><td><strong>Galway</strong></td><td>Trem (~2h15)</td><td>€20–35</td><td>City vibrante, Wild Atlantic Way</td></tr>
+        <tr><td><strong>Belfast</strong></td><td>Trem (~2h)</td><td>€20–35</td><td>Titanic Museum, murais políticos</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── LAZER ──────────────────────────────── -->
+<div class="section" id="lazer">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FAEEDA">🍺</div>
+    <div>
+      <div class="section-title">Bares, Lazer & Entretenimento</div>
+      <div class="section-sub">Pubs, trad music, cinema, academia, shows e quanto custa se divertir</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🍺 Preços de bebida em Dublin — comparação por área</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Bebida</th><th>Pub de bairro</th><th>Centro (fora Temple Bar)</th><th>⚠️ Temple Bar</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>Pint de Guinness</strong></td><td>€5,50–6,50</td><td>€6,50–7,50</td><td>€7,50–9,00</td></tr>
+        <tr><td><strong>Lager/cerveja padrão</strong></td><td>€5,50–6,50</td><td>€6,50–7,50</td><td>€7,00–9,00</td></tr>
+        <tr><td><strong>Craft beer (pint)</strong></td><td>€6,50–8,00</td><td>€7,00–9,00</td><td>€8,00–10,00</td></tr>
+        <tr><td><strong>Vinho taça 175ml</strong></td><td>€6,50–8,00</td><td>€7,00–9,00</td><td>€8,00–11,00</td></tr>
+        <tr><td><strong>Cocktail</strong></td><td>€10–13</td><td>€11–15</td><td>€12–17</td></tr>
+        <tr><td><strong>Shot de whiskey</strong></td><td>€4,50–6,00</td><td>€5,00–7,00</td><td>€6,00–8,00</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-gold mt12">
+      <span class="icon">🎻</span>
+      <p><strong>Trad music ao vivo:</strong> Gratuita na maioria dos pubs. Cobblestone (Smithfield), O'Donoghue's (Merrion Row) e The Brazen Head são os mais autênticos. Não confunda com pubs de Temple Bar que cobram "cover" para "live music".</p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>🍻 Pubs recomendados pelos moradores</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Pub</th><th>Bairro</th><th>Por quê ir</th><th>Pint</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>The Cobblestone</strong></td><td>Smithfield</td><td>Trad session diária, favorito dos locais, autêntico</td><td>~€6</td></tr>
+        <tr><td><strong>Mulligan's</strong></td><td>Poolbeg St</td><td>Melhor Guinness de Dublin segundo muitos</td><td>~€6</td></tr>
+        <tr><td><strong>The Gravediggers</strong></td><td>Glasnevin</td><td>Pub mais antigo, ao lado do cemitério histórico</td><td>~€5,50</td></tr>
+        <tr><td><strong>O'Donoghue's</strong></td><td>Merrion Row</td><td>Trad session, onde os Dubliners ensaiavam</td><td>~€6,50</td></tr>
+        <tr><td><strong>Walsh's</strong></td><td>Stoneybatter</td><td>Belíssimo pub preservado, snugs de madeira</td><td>~€6</td></tr>
+        <tr><td><strong>Kehoe's</strong></td><td>South Anne St</td><td>Próximo a Grafton St, autêntico, snugs</td><td>~€6,50</td></tr>
+        <tr><td><strong>Whelan's</strong></td><td>Wexford St</td><td>Live music indie/rock, palco + pub</td><td>~€6,50</td></tr>
+        <tr><td><strong>Against the Grain</strong></td><td>Wexford St</td><td>Cerveja artesanal, ampla seleção nacional</td><td>€6–8</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h4>🎬 Cinema — preços típicos</h4>
+      <table class="data-table mt8">
+        <thead><tr><th>Tipo</th><th>Preço</th></tr></thead>
+        <tbody>
+          <tr><td>Sessão padrão adulto</td><td>€13–17</td></tr>
+          <tr><td>Matinê (antes das 12h)</td><td>€9–12</td></tr>
+          <tr><td>IMAX</td><td>€17–22</td></tr>
+          <tr><td>4DX</td><td>€18–24</td></tr>
+          <tr class="hl"><td>ODEON myLimitless (ilimitado)</td><td>€12,79/mês</td></tr>
+          <tr class="hl"><td>Cineworld Unlimited</td><td>~€22,90/mês</td></tr>
+        </tbody>
+      </table>
+      <div class="callout callout-green mt8">
+        <span class="icon">💡</span>
+        <p>O ODEON myLimitless (€12,79/mês) é excelente se forem ao cinema 2×/mês ou mais.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h4>🏋️ Academia & Esporte</h4>
+      <table class="data-table mt8">
+        <thead><tr><th>Opção</th><th>Custo</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>Flyefit</strong> (budget 24h)</td><td>€10–15/mês</td></tr>
+          <tr><td>Energie Fitness</td><td>€25–35/mês</td></tr>
+          <tr><td>Nuffield Health</td><td>€50–70/mês</td></tr>
+          <tr><td>Dublin City Council (piscinas)</td><td>€4–6/sessão</td></tr>
+          <tr><td>Dublin Bikes (bicicleta)</td><td>€35/ano</td></tr>
+          <tr class="hl"><td>Corrida no Phoenix Park</td><td>Grátis</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>🎭 Outros eventos e entretenimento</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Tipo</th><th>Preço</th><th>Onde</th></tr></thead>
+      <tbody>
+        <tr><td>Show ao vivo (Whelan's, Academy)</td><td>€15–35</td><td>whelanslive.com</td></tr>
+        <tr><td>Grandes shows (3Arena, Aviva)</td><td>€50–150+</td><td>Ticketmaster.ie</td></tr>
+        <tr><td>Stand-up comedy</td><td>€10–25</td><td>Laughter Lounge, Comedy Crunch</td></tr>
+        <tr><td>Teatro (Abbey, Gate, Gaiety)</td><td>€15–55</td><td>abbeytheatre.ie, gatetheatre.ie</td></tr>
+        <tr><td>GAA (Croke Park)</td><td>€10–30</td><td>gaa.ie — hurling e futebol gaélico</td></tr>
+        <tr><td>Rugby (Aviva Stadium)</td><td>€30–80</td><td>irfu.ie — experiência incrível</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── ORÇAMENTO ──────────────────────────── -->
+<div class="section" id="orcamento">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">💰</div>
+    <div>
+      <div class="section-title">Simulador de Orçamento 2026</div>
+      <div class="section-sub">Dados validados — salário mínimo corrigido para €2.157 líquido/mês</div>
+    </div>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="icon">✅</span>
+    <p><strong>Dados validados via salaryaftertax.com (Budget 2026):</strong> Salário mínimo €14,15/h × 40h × 52÷12 = €2.453 bruto → <strong>€2.157 líquido</strong>. O valor anterior (€1.938) estava desatualizado.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="val" style="color:var(--gold)">€14,15</div><div class="lbl">Mínimo/hora</div><div class="sub">desde jan 2026</div></div>
+    <div class="stat-card"><div class="val" style="color:var(--blue)">€2.453</div><div class="lbl">Bruto/mês (40h)</div><div class="sub">por pessoa</div></div>
+    <div class="stat-card"><div class="val text-green">€2.157</div><div class="lbl">Líquido/mês ✓</div><div class="sub">após impostos</div></div>
+    <div class="stat-card"><div class="val text-green">€4.314</div><div class="lbl">Casal (2 salários)</div><div class="sub">renda combinada</div></div>
+  </div>
+
+  <!-- Toggle 1/2 pessoas -->
+  <div class="person-toggle" id="person-toggle">
+    <button class="person-btn active" onclick="setPerson(1,this)">👤 1 Pessoa</button>
+    <button class="person-btn" onclick="setPerson(2,this)">👫 2 Pessoas (Casal)</button>
+  </div>
+
+  <!-- CENÁRIOS 1 PESSOA -->
+  <div id="orcamento-1p">
+    <div class="scenario-tabs" id="scen1-tabs">
+      <button class="scen-btn active" onclick="showScen('s1p',1,this)">🏠 Quarto compartilhado</button>
+      <button class="scen-btn" onclick="showScen('s1p',2,this)">🏢 Studio / Quarto próprio</button>
+    </div>
+
+    <div class="budget-scenario active card" id="s1p1">
+      <h3>Cenário 1 — Quarto compartilhado em casa</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Opção mais viável para iniciar. Boa localização central com transporte.</p>
+      <div class="budget-item"><div><div class="name">Quarto em casa compartilhada</div><div class="note">Preço médio Dublin 2026</div></div><div class="amount">€900–1.100</div></div>
+      <div class="budget-bar-wrap"><div class="budget-bar-fill" style="width:49%;background:#E74C3C"></div></div>
+      <div class="budget-item"><div><div class="name">Alimentação (Aldi/Lidl sozinho)</div></div><div class="amount">~€200</div></div>
+      <div class="budget-bar-wrap"><div class="budget-bar-fill" style="width:9%;background:#F39C12"></div></div>
+      <div class="budget-item"><div><div class="name">Transporte (Leap Card)</div><div class="note">Cap semanal ~€34</div></div><div class="amount">~€147</div></div>
+      <div class="budget-item"><div><div class="name">Utilities partilhadas</div></div><div class="amount">~€40</div></div>
+      <div class="budget-item"><div><div class="name">Celular (GoMo)</div></div><div class="amount">€10</div></div>
+      <div class="budget-item"><div><div class="name">Higiene pessoal</div></div><div class="amount">~€50</div></div>
+      <div class="budget-item"><div><div class="name">Lazer mínimo</div></div><div class="amount">~€80</div></div>
+      <div class="budget-total"><span class="tl">Total estimado</span><span class="tv" style="color:var(--red)">~€1.527/mês</span></div>
+      <div class="budget-surplus" style="background:var(--green-pale)">
+        <div><div class="sl text-green">Sobra mensal</div><div class="ss text-green">Para poupança e imprevistos</div></div>
+        <div class="sv text-green">~€630</div>
+      </div>
+    </div>
+
+    <div class="budget-scenario card" id="s1p2" style="display:none">
+      <h3>Cenário 2 — Studio ou quarto individual</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Mais privacidade, mas orçamento muito apertado. Não recomendado logo ao chegar.</p>
+      <div class="budget-item"><div><div class="name">Studio / quarto individual</div><div class="note">Difícil de encontrar — pesquise bem</div></div><div class="amount">€1.300–1.600</div></div>
+      <div class="budget-bar-wrap"><div class="budget-bar-fill" style="width:67%;background:#E74C3C"></div></div>
+      <div class="budget-item"><div><div class="name">Alimentação</div></div><div class="amount">~€200</div></div>
+      <div class="budget-item"><div><div class="name">Utilities (gás + luz)</div></div><div class="amount">€120–150</div></div>
+      <div class="budget-item"><div><div class="name">Internet + celular</div></div><div class="amount">€45</div></div>
+      <div class="budget-item"><div><div class="name">Transporte</div></div><div class="amount">~€147</div></div>
+      <div class="budget-item"><div><div class="name">Higiene + lazer</div></div><div class="amount">~€100</div></div>
+      <div class="budget-total"><span class="tl">Total estimado</span><span class="tv" style="color:var(--red)">~€2.062/mês</span></div>
+      <div class="budget-surplus" style="background:var(--red-pale)">
+        <div><div class="sl" style="color:var(--red)">Sobra mensal</div><div class="ss" style="color:var(--red)">Sem margem alguma para imprevisto</div></div>
+        <div class="sv" style="color:var(--red)">~€95</div>
+      </div>
+      <div class="callout callout-red mt16">
+        <span class="icon">⚠️</span>
+        <p>Studio com salário mínimo individual é viável no papel mas sem nenhuma margem. Qualquer imprevisto (médico, peça de roupa, conserto) compromete. Recomendamos fortemente quarto compartilhado nos primeiros meses.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENÁRIOS 2 PESSOAS (CASAL) -->
+  <div id="orcamento-2p" style="display:none">
+    <div class="scenario-tabs" id="scen2-tabs">
+      <button class="scen-btn active" onclick="showScen('s2p',1,this)">🏠 Casa compartilhada</button>
+      <button class="scen-btn" onclick="showScen('s2p',2,this)">🏢 Apartamento próprio</button>
+      <button class="scen-btn" onclick="showScen('s2p',3,this)">🚗 Apartamento + Carro</button>
+    </div>
+
+    <div class="budget-scenario active card" id="s2p1">
+      <h3>Cenário 1 — Casa compartilhada (mais recomendado para início)</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Melhor custo-benefício. Permite poupar enquanto se estabelece no país.</p>
+      <div class="budget-item"><div><div class="name">2 quartos em casa compartilhada</div><div class="note">Ou quarto de casal — opção realista</div></div><div class="amount">€1.800–2.200</div></div>
+      <div class="budget-bar-wrap"><div class="budget-bar-fill" style="width:48%;background:#E74C3C"></div></div>
+      <div class="budget-item"><div><div class="name">Alimentação (Aldi/Lidl)</div></div><div class="amount">~€350</div></div>
+      <div class="budget-bar-wrap"><div class="budget-bar-fill" style="width:8%;background:#F39C12"></div></div>
+      <div class="budget-item"><div><div class="name">Transporte (2 Leap Cards)</div><div class="note">Cap semanal €34 × 2</div></div><div class="amount">~€294</div></div>
+      <div class="budget-item"><div><div class="name">Utilities partilhadas</div></div><div class="amount">€70–90</div></div>
+      <div class="budget-item"><div><div class="name">Internet + 2 celulares</div></div><div class="amount">€50</div></div>
+      <div class="budget-item"><div><div class="name">Higiene + saúde</div></div><div class="amount">~€90</div></div>
+      <div class="budget-item"><div><div class="name">Lazer (pubs, cinema, etc.)</div></div><div class="amount">~€150</div></div>
+      <div class="budget-total"><span class="tl">Total estimado</span><span class="tv" style="color:var(--red)">~€2.874/mês</span></div>
+      <div class="budget-surplus" style="background:var(--green-pale)">
+        <div><div class="sl text-green">Sobra mensal</div><div class="ss text-green">Para poupança, viagens e emergências</div></div>
+        <div class="sv text-green">~€1.440</div>
+      </div>
+    </div>
+
+    <div class="budget-scenario card" id="s2p2" style="display:none">
+      <h3>Cenário 2 — Apartamento próprio (1 quarto, subúrbio)</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Mais independência. Orçamento equilibrado com disciplina.</p>
+      <div class="budget-item"><div><div class="name">Aluguel 1 quarto (subúrbio)</div><div class="note">Média Dublin 2026 — Tallaght, Swords, Drumcondra</div></div><div class="amount">€1.750–2.100</div></div>
+      <div class="budget-bar-wrap"><div class="budget-bar-fill" style="width:45%;background:#E74C3C"></div></div>
+      <div class="budget-item"><div><div class="name">Alimentação</div></div><div class="amount">~€350</div></div>
+      <div class="budget-item"><div><div class="name">Utilities (luz + gás)</div><div class="note">Mais alto no inverno — €250 em jan/fev</div></div><div class="amount">€150–200</div></div>
+      <div class="budget-item"><div><div class="name">Internet + 2 celulares</div></div><div class="amount">€65</div></div>
+      <div class="budget-item"><div><div class="name">Bin collection</div></div><div class="amount">~€25</div></div>
+      <div class="budget-item"><div><div class="name">Transporte + higiene + lazer</div></div><div class="amount">~€500</div></div>
+      <div class="budget-total"><span class="tl">Total estimado</span><span class="tv" style="color:var(--red)">~€3.065/mês</span></div>
+      <div class="budget-surplus" style="background:var(--amber-pale)">
+        <div><div class="sl text-amber">Sobra mensal</div><div class="ss text-amber">Margem moderada — poupança possível</div></div>
+        <div class="sv text-amber">~€1.249</div>
+      </div>
+    </div>
+
+    <div class="budget-scenario card" id="s2p3" style="display:none">
+      <h3>Cenário 3 — Apartamento + Carro</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Mais confortável mas custo elevado. Seguro alto para novos motoristas.</p>
+      <div class="budget-item"><div><div class="name">Aluguel 1 quarto</div></div><div class="amount">€1.900</div></div>
+      <div class="budget-item"><div><div class="name">Seguro do carro (novo motorista)</div><div class="note">Dacia Sandero — mais barato do mercado</div></div><div class="amount">€100/mês (€1.200/ano)</div></div>
+      <div class="budget-item"><div><div class="name">Combustível + Motor Tax + manutenção</div></div><div class="amount">~€180/mês</div></div>
+      <div class="budget-item"><div><div class="name">Alimentação</div></div><div class="amount">~€350</div></div>
+      <div class="budget-item"><div><div class="name">Utilities + internet + celulares</div></div><div class="amount">€265</div></div>
+      <div class="budget-item"><div><div class="name">Higiene + saúde + lazer</div></div><div class="amount">~€250</div></div>
+      <div class="budget-total"><span class="tl">Total estimado</span><span class="tv" style="color:var(--red)">~€3.045/mês</span></div>
+      <div class="budget-surplus" style="background:var(--amber-pale)">
+        <div><div class="sl text-amber">Sobra mensal</div><div class="ss text-amber">Margem moderada — carro viabilizado</div></div>
+        <div class="sv text-amber">~€1.269</div>
+      </div>
+      <div class="callout callout-amber mt16">
+        <span class="icon">💡</span>
+        <p>Espere 3–6 meses de histórico de trabalho na Irlanda antes de comprar o carro. O seguro cai significativamente com histórico irlandês comprovado e no-claims letter.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CHECKLIST ─────────────────────────── -->
+<div class="section" id="checklist">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">✅</div>
+    <div>
+      <div class="section-title">Checklist — Lista de Tarefas</div>
+      <div class="section-sub">Antes de ir, ao chegar e nos primeiros meses</div>
+    </div>
+  </div>
+
+  <div class="check-stats">
+    <span id="check-done">0</span> / <span id="check-total">0</span> tarefas concluídas
+  </div>
+  <div class="check-progress"><div class="check-progress-fill" id="check-bar" style="width:0%"></div></div>
+
+  <div class="card-grid cols2">
+    <div class="card">
+      <div class="check-group"><h4>🇧🇷 Antes de sair do Brasil</h4></div>
+      <ul class="checklist" id="cl-brasil">
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Abrir conta Revolut</div><div class="ci-note">No Brasil, pelo app — IBAN imediato</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Abrir conta Wise</div><div class="ci-note">Para envios ao Brasil com câmbio real</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Comprar adaptadores Tipo G</div><div class="ci-note">Ao menos 3 unidades por pessoa</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Tirar/renovar passaporte brasileiro</div><div class="ci-note">Válido por pelo menos 2 anos</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Verificar passaporte EU (se for o caso)</div><div class="ci-note">Deve estar válido na chegada</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Tirar PID (Permissão Internacional de Dirigir)</div><div class="ci-note">Válida por 12 meses na Irlanda com CNH</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Digitalizar documentos importantes</div><div class="ci-note">Certidão de casamento, nascimento, diploma — em inglês</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Reserva de emergência: €4.000–6.000</div><div class="ci-note">Para depósito, primeiros meses sem emprego</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Contratar seguro saúde de viagem</div><div class="ci-note">Para os primeiros meses, até ter Medical Card</div></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="check-group"><h4>✈️ Ao chegar — Semana 1</h4></div>
+      <ul class="checklist" id="cl-chegada">
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Comprar chip Tesco Mobile</div><div class="ci-note">€15, disponível em qualquer Tesco</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Comprar adaptadores Tipo G na chegada</div><div class="ci-note">Se não trouxe — aeroporto, Argos, Curry's</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Comprar edredom, lençol, toalhas</div><div class="ci-note">Penneys é o melhor custo-benefício</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Criar conta MyGovID</div><div class="ci-note">mygovid.ie — necessário para tudo gov</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Solicitar PPS Number</div><div class="ci-note">mywelfare.ie — PRIORIDADE MÁXIMA</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Buscar emprego ativamente</div><div class="ci-note">LinkedIn, Indeed.ie, Jobs.ie, Irishjobs.ie</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Abrir AIB ou Bank of Ireland</div><div class="ci-note">Após ter PPS + comprovante de endereço</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Cadastrar Leap Card</div><div class="ci-note">about.leapcard.ie — desconto em transporte</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Registrar na Revenue</div><div class="ci-note">revenue.ie/myAccount — após ter emprego</div></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="check-group"><h4>📋 Meses 1–3 — Regularização</h4></div>
+      <ul class="checklist" id="cl-meses">
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Iniciar processo EU Treaty Rights (cônjuge)</div><div class="ci-note">EUTR1 no ISD — dentro de 90 dias da chegada</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Solicitar Medical Card</div><div class="ci-note">hse.ie — se renda abaixo de €352/semana</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Cadastrar com um GP (médico)</div><div class="ci-note">hse.ie/find-gp — escolher GP próximo a casa</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Migrар chip para GoMo</div><div class="ci-note">€9,99/mês dados ilimitados, melhor custo</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Explorar bairros para possível aluguel</div><div class="ci-note">Tallaght, Drumcondra, Swords, Rathmines</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Verificar elegibilidade FBR (se aplicável)</div><div class="ci-note">dfa.ie — avó/avô nascido na Irlanda?</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Abrir conta AIB ou Bank of Ireland</div><div class="ci-note">Para histórico bancário local</div></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="check-group"><h4>🏡 Meses 3–12 — Estabelecer raízes</h4></div>
+      <ul class="checklist" id="cl-raizes">
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Visitar Guinness Storehouse</div><div class="ci-note">Reserve online — dinâmico por horário</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Tour guiado no Kilmainham Gaol</div><div class="ci-note">Reserve semanas antes — esgota rapidamente</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Passeio de DART até Howth</div><div class="ci-note">€6–8 ida/volta — vista incrível + frutos do mar</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Iniciar processo de CNH irlandesa</div><div class="ci-note">ndls.ie — teoria + prática (após 12 meses com PID)</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Planejar viagem pelo interior</div><div class="ci-note">Galway, Kilkenny, Ring of Kerry, Wild Atlantic Way</div></div></li>
+        <li class="check-item" onclick="toggleCheck(this)"><input type="checkbox"><div class="ci-text"><div class="ci-name">Começar a acumular evidências de residência</div><div class="ci-note">Contratos, holerites, contas — para naturalização</div></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- YouTube final banner -->
+  <div style="margin-top:32px;">
+    <a href="https://www.youtube.com/@nos.viajante" target="_blank" class="yt-banner" style="margin:0">
+      <div class="yt-play">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="yt-info">
+        <h3>Gostou do guia? Acompanhe nossa jornada ao vivo!</h3>
+        <p>Vídeos reais sobre a vida em Dublin — desde o processo de mudança até o dia a dia, trabalho e aventuras pela Irlanda. Tudo na perspectiva de um casal brasileiro.</p>
+        <span class="yt-handle">@nos.viajante no YouTube</span>
+      </div>
+      <div class="yt-cta">Inscrever-se ▶</div>
+    </a>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ─── Navigation
+function setActive(el) {
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ─── Person toggle
+function setPerson(n, btn) {
+  document.querySelectorAll('.person-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('orcamento-1p').style.display = n === 1 ? 'block' : 'none';
+  document.getElementById('orcamento-2p').style.display = n === 2 ? 'block' : 'none';
+}
+
+// ─── Scenario tabs
+function showScen(prefix, n, btn) {
+  const tabs = btn.parentElement;
+  tabs.querySelectorAll('.scen-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // hide all scenarios in same group
+  const section = tabs.closest('.section') || tabs.closest('#orcamento');
+  section.querySelectorAll('.budget-scenario').forEach(s => {
+    if (s.id.startsWith(prefix)) s.style.display = 'none';
+  });
+  document.getElementById(prefix + n).style.display = 'block';
+}
+
+// ─── Tab switching
+function switchTab(group, panelId, btn) {
+  const wrapper = btn.closest('.section') || btn.closest('[id]');
+  wrapper.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  wrapper.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(group + '-' + panelId).classList.add('active');
+}
+
+// ─── Clothing tiers
+function switchTier(gender, tier, btn) {
+  btn.parentElement.querySelectorAll('.tier-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const panel = btn.closest('.tab-panel');
+  panel.querySelectorAll('.tier-panel').forEach(p => {
+    p.classList.remove('active');
+    p.style.display = 'none';
+  });
+  const target = document.getElementById(gender + '-' + tier);
+  if (target) { target.classList.add('active'); target.style.display = 'block'; }
+}
+
+// ─── Checklist
+function toggleCheck(item) {
+  const cb = item.querySelector('input[type=checkbox]');
+  if (event.target === cb) return; // let default checkbox behavior work
+  cb.checked = !cb.checked;
+  item.classList.toggle('done', cb.checked);
+  updateCheckProgress();
+  saveChecklist();
+}
+
+document.querySelectorAll('.check-item input').forEach(cb => {
+  cb.addEventListener('change', () => {
+    cb.closest('.check-item').classList.toggle('done', cb.checked);
+    updateCheckProgress();
+    saveChecklist();
+  });
+});
+
+function updateCheckProgress() {
+  const all = document.querySelectorAll('.check-item input');
+  const done = document.querySelectorAll('.check-item input:checked');
+  document.getElementById('check-total').textContent = all.length;
+  document.getElementById('check-done').textContent = done.length;
+  document.getElementById('check-bar').style.width = (done.length / all.length * 100) + '%';
+}
+
+function saveChecklist() {
+  const state = {};
+  document.querySelectorAll('.check-item input').forEach((cb, i) => {
+    state[i] = cb.checked;
+  });
+  try { localStorage.setItem('dublin-checklist', JSON.stringify(state)); } catch(e) {}
+}
+
+function loadChecklist() {
+  try {
+    const state = JSON.parse(localStorage.getItem('dublin-checklist') || '{}');
+    document.querySelectorAll('.check-item input').forEach((cb, i) => {
+      if (state[i]) {
+        cb.checked = true;
+        cb.closest('.check-item').classList.add('done');
+      }
+    });
+  } catch(e) {}
+  updateCheckProgress();
+}
+
+// ─── Scroll spy
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
+
+// ─── Init
+loadChecklist();
+document.getElementById('check-total').textContent = document.querySelectorAll('.check-item').length;
+</script>
+</body>
+</html>
