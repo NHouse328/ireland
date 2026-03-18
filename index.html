@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guia completo e atualizado para brasileiros mudando para Dublin, Irlanda em 2026. Documentação, custos, moradia, cidadania, orçamento e checklist prática.">
+<meta name="keywords" content="Dublin, Irlanda, brasileiros, imigração, guia, moradia, PPS, cidadania, custo de vida">
+<meta name="author" content="Nos Viajante">
+<link rel="canonical" href="https://ireland.gavriel.com.br/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ireland.gavriel.com.br/">
+<meta property="og:title" content="Guia Dublin 2026 — Tudo para Brasileiros na Irlanda">
+<meta property="og:description" content="Guia completo e atualizado para brasileiros mudando para Dublin. Documentação, custos reais, moradia, cidadania e checklist interativa.">
+<meta property="og:image" content="https://ireland.gavriel.com.br/og-image.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Nos Viajante">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia Dublin 2026 — Brasileiros na Irlanda">
+<meta name="twitter:description" content="Guia completo: documentação, custos, moradia, cidadania e checklist para brasileiros mudando para Dublin.">
+<meta name="twitter:image" content="https://ireland.gavriel.com.br/og-image.png">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☘️</text></svg>">
 <title>Guia Dublin 2026 — Nos Viajante</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -605,10 +625,47 @@ a:hover{text-decoration:underline}
 strong{font-weight:700}
 em{font-style:italic}
 
+/* ─── MOBILE MENU ────────────────── */
+#menu-toggle{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:1001;
+  width:44px;height:44px;
+  border:none;border-radius:10px;
+  background:var(--green-dark);
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  transition:background 0.2s;
+}
+#menu-toggle:hover{background:var(--green-mid)}
+#menu-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  z-index:999;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+#menu-overlay.visible{opacity:1}
+
 /* ─── RESPONSIVE ─────────────────── */
 @media(max-width:900px){
   :root{--nav-w:0px}
-  #sidebar{display:none}
+  #menu-toggle{display:flex;align-items:center;justify-content:center}
+  #sidebar{
+    position:fixed;
+    top:0;left:0;
+    height:100vh;
+    width:280px;
+    z-index:1000;
+    transform:translateX(-100%);
+    transition:transform 0.3s ease;
+  }
+  #sidebar.open{transform:translateX(0)}
   .hero{padding:32px 24px}
   .section{padding:28px 20px 36px}
   .yt-banner{margin:16px 16px;flex-direction:column;align-items:flex-start}
@@ -617,6 +674,10 @@ em{font-style:italic}
 </style>
 </head>
 <body>
+
+<!-- ─── MOBILE MENU ────────────────────────────── -->
+<button id="menu-toggle" aria-label="Menu de navegação">☰</button>
+<div id="menu-overlay"></div>
 
 <!-- ─── SIDEBAR ─────────────────────────────── -->
 <nav id="sidebar">
@@ -654,12 +715,14 @@ em{font-style:italic}
   </div>
   <div class="nav-group">
     <div class="nav-label">Vida em Dublin</div>
+    <a href="#trabalho" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Trabalho & Emprego</a>
     <a href="#moradia" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Moradia & Aluguel</a>
     <a href="#roupas" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Roupas & Lavanderia</a>
     <a href="#casa" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Itens Essenciais do Lar</a>
     <a href="#alimentacao" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Supermercados & Alimentação</a>
     <a href="#comer-fora" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Comer Fora</a>
     <a href="#carro" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Carro & CNH</a>
+    <a href="#transporte" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Transporte Público</a>
     <a href="#dicas" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Diferenças Culturais</a>
   </div>
   <div class="nav-group">
@@ -668,8 +731,14 @@ em{font-style:italic}
     <a href="#lazer" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Bares & Entretenimento</a>
   </div>
   <div class="nav-group">
-    <div class="nav-label">Orçamento</div>
-    <a href="#orcamento" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Simulador (1 ou 2 pessoas)</a>
+    <div class="nav-label">Impostos & Orçamento</div>
+    <a href="#impostos" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Impostos & Tax Credits</a>
+    <a href="#orcamento" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Simulador de Orçamento</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Educação & Comunidade</div>
+    <a href="#educacao" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Educação & Idioma</a>
+    <a href="#comunidade" class="nav-link" onclick="setActive(this)"><span class="dot"></span>Comunidade Brasileira</a>
   </div>
   <div class="nav-group">
     <div class="nav-label">Checklist</div>
@@ -1143,6 +1212,91 @@ em{font-style:italic}
   </div>
 </div>
 
+<!-- ─── TRABALHO & EMPREGO ──────────────── -->
+<div class="section" id="trabalho">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">💼</div>
+    <div>
+      <div class="section-title">Trabalho & Emprego</div>
+      <div class="section-sub">Onde procurar, setores com mais vagas e direitos trabalhistas</div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <span class="icon">🚨</span>
+    <p><strong>Você precisa do PPS Number para trabalhar legalmente.</strong> Sem ele, o empregador é obrigado a aplicar imposto de emergência (48%). Solicite o PPS assim que chegar — veja a seção acima.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔍 Onde procurar emprego</h3>
+    <ul class="dots mt8">
+      <li><strong><a href="https://ie.indeed.com" target="_blank">Indeed.ie</a></strong> — maior volume de vagas na Irlanda, filtro por Dublin e tipo de contrato</li>
+      <li><strong><a href="https://www.jobs.ie" target="_blank">Jobs.ie</a></strong> — plataforma irlandesa popular, forte em retail e hospitality</li>
+      <li><strong><a href="https://www.linkedin.com/jobs" target="_blank">LinkedIn</a></strong> — essencial para vagas em tech, finanças e cargos qualificados</li>
+      <li><strong>Agências de recrutamento:</strong> CPL, Sigmar, Hays, TTM Healthcare — cadastre-se em várias ao mesmo tempo</li>
+      <li><strong>Walk-in (presencial):</strong> restaurantes, cafés e hotéis frequentemente contratam no local — leve CVs impressos</li>
+      <li><strong>Grupos no Facebook:</strong> "Brasileiros em Dublin", "Empregos em Dublin para Brasileiros" — vagas informais e dicas em tempo real</li>
+    </ul>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h3>🏨 Setores com mais oportunidades</h3>
+      <ul class="dots mt8">
+        <li><strong>Hospitality:</strong> hotéis, restaurantes, cafés — maior volume de vagas, contratação rápida</li>
+        <li><strong>Retail:</strong> Dunnes, Tesco, Penneys — turnos flexíveis, bom para início</li>
+        <li><strong>Warehouses/Logística:</strong> Amazon, DPD — trabalho físico, pagamento acima do mínimo</li>
+        <li><strong>Tech:</strong> Google, Meta, Salesforce — exige inglês fluente e experiência prévia</li>
+        <li><strong>Healthcare:</strong> enfermagem, cuidadores — demanda alta, exige validação de diploma</li>
+        <li><strong>Construção:</strong> pedreiros, eletricistas — salários altos, exige Safe Pass (€180)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💰 Salários por setor (2026)</h3>
+      <table class="data-table mt8">
+        <thead><tr><th>Setor</th><th>Faixa salarial</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Salário mínimo nacional</td><td><strong>€14,15/hora</strong></td></tr>
+          <tr><td>Hospitality</td><td>€14–16/hora</td></tr>
+          <tr><td>Retail</td><td>€14–15/hora</td></tr>
+          <tr><td>Warehouse/Logística</td><td>€15–17/hora</td></tr>
+          <tr><td>Construção</td><td>€17–22/hora</td></tr>
+          <tr><td>Tech (entry-level)</td><td>€35–50k/ano</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>⚖️ Seus direitos trabalhistas na Irlanda</h3>
+    <p class="mt8">A legislação irlandesa protege todos os trabalhadores, independente da nacionalidade. Conheça os principais direitos:</p>
+    <ul class="dots mt8">
+      <li><strong>Jornada máxima:</strong> 48 horas semanais (média calculada sobre 4 meses)</li>
+      <li><strong>Férias:</strong> 20 dias úteis pagos por ano + 9 bank holidays (feriados nacionais)</li>
+      <li><strong>Contrato obrigatório:</strong> o empregador deve fornecer contrato escrito em até 5 dias após o início</li>
+      <li><strong>Payslip:</strong> holerite obrigatório a cada pagamento — confira PAYE, USC e PRSI</li>
+      <li><strong>Notice period:</strong> após 13 semanas, direito a 1 semana de aviso prévio; aumenta com tempo de serviço</li>
+      <li><strong>Salário mínimo:</strong> €14,15/hora desde janeiro de 2026 — ilegal pagar menos</li>
+    </ul>
+    <div class="callout callout-gold mt12">
+      <span class="icon">💡</span>
+      <p>Problemas com empregador? A <strong>Workplace Relations Commission (WRC)</strong> resolve disputas gratuitamente: <a href="https://www.workplacerelations.ie" target="_blank">workplacerelations.ie</a></p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>📝 CV no estilo irlandês</h3>
+    <p class="mt8">O currículo na Irlanda é diferente do brasileiro. Siga estas regras para não ser descartado:</p>
+    <ul class="dots mt8">
+      <li><strong>Máximo 2 páginas</strong> — objetivo e conciso</li>
+      <li><strong>Sem foto, sem data de nascimento, sem estado civil</strong> — legislação anti-discriminação</li>
+      <li><strong>Referências:</strong> escreva "Available upon request" — não coloque contatos diretamente</li>
+      <li><strong>Formato:</strong> Personal Statement → Experience → Education → Skills</li>
+      <li><strong>Adapte para cada vaga:</strong> use palavras-chave do anúncio no seu CV</li>
+    </ul>
+  </div>
+</div>
+
 <!-- ─── MORADIA ───────────────────────────── -->
 <div class="section" id="moradia">
   <div class="section-header">
@@ -1605,6 +1759,119 @@ em{font-style:italic}
   </div>
 </div>
 
+<!-- ─── TRANSPORTE PÚBLICO ──────────────── -->
+<div class="section" id="transporte">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D6EAF8">🚌</div>
+    <div>
+      <div class="section-title">Transporte Público</div>
+      <div class="section-sub">Dublin Bus, Luas, DART, Leap Card e custos mensais</div>
+    </div>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="icon">✅</span>
+    <p><strong>Dublin NÃO aceita mais pagamento em dinheiro nos ônibus desde 2018.</strong> Você precisa de um Leap Card ou pagar por app (TFI Go). Providencie o cartão logo na primeira semana.</p>
+  </div>
+
+  <div class="card-grid cols2">
+    <div class="card">
+      <h4>🚌 Dublin Bus (Go-Ahead & Dublin Bus)</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Rede BusConnects:</strong> reformulação completa das rotas desde 2024 — letras e números novos (ex: rotas Spine C, H, N)</li>
+        <li><strong>Frequência:</strong> rotas Spine a cada 4–8 min, outras a cada 10–20 min</li>
+        <li><strong>Horário:</strong> ~5h30 às 23h30 (Nitelink sexta/sábado até ~4h)</li>
+        <li><strong>Tarifa Leap:</strong> €1,55 (90 min, conexões incluídas)</li>
+        <li><strong>Rotas úteis:</strong> C1/C2 (Sandyford–Adamstown), H1/H2 (Howth–cidade), 39A (cidade–Blanchardstown)</li>
+        <li>App <strong>TFI Live</strong> para horários em tempo real</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>🚃 Luas (VLT / Tram)</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Linha Verde:</strong> Brides Glen ↔ Broombridge (sul–norte, passa por St. Stephen's Green, O'Connell)</li>
+        <li><strong>Linha Vermelha:</strong> Saggart/Tallaght ↔ The Point (leste–oeste, Heuston Station, Smithfield)</li>
+        <li><strong>Tarifa Leap:</strong> €1,34–€2,16 dependendo das zonas</li>
+        <li><strong>Frequência:</strong> a cada 4–8 min nos horários de pico</li>
+        <li><strong>Dica:</strong> cruza com DART em Connolly; ótimo para quem mora em Tallaght, Dundrum ou Sandyford</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h4>🚆 DART (Trem costeiro)</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Cobertura:</strong> Malahide/Howth (norte) ↔ Greystones (sul), passando por Connolly, Tara St e Pearse</li>
+        <li><strong>Tarifa Leap:</strong> €2,00–€3,50 dependendo da distância</li>
+        <li><strong>Frequência:</strong> a cada 10–20 min (mais frequente no pico)</li>
+        <li><strong>Ideal para:</strong> quem mora em Bray, Dún Laoghaire, Howth, Malahide ou Swords (DART+)</li>
+        <li><strong>DART+ expansion:</strong> em andamento, conectará mais áreas até 2028</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>🚲 Dublin Bikes</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Assinatura anual:</strong> €35/ano — primeiros 30 min de cada viagem grátis</li>
+        <li><strong>Cobertura:</strong> ~120 estações no centro de Dublin (até ~5km do centro)</li>
+        <li><strong>Como aderir:</strong> dublinbikes.ie com cartão de crédito/débito</li>
+        <li><strong>Depósito:</strong> €150 (devolvido se a bike for retornada)</li>
+        <li>Excelente para trajetos curtos centro–trabalho</li>
+        <li><strong>Bleeper Bikes:</strong> alternativa dockless, €1,20 por 30 min</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>💳 Leap Card — Seu passe essencial</h3>
+    <table class="data-table mt12">
+      <thead><tr><th>Item</th><th>Detalhe</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Onde comprar</strong></td><td>Lojas de conveniência (Spar, Centra, Newsagents), online em leapcard.ie, ou escritórios Leap</td></tr>
+        <tr><td><strong>Custo do cartão</strong></td><td>€7 (adulto) — reembolsável ao devolver</td></tr>
+        <tr><td><strong>Como recarregar</strong></td><td>App TFI Leap Top-Up (NFC no celular), máquinas nas estações Luas/DART, ou lojas</td></tr>
+        <tr class="hl"><td><strong>Cap diário (bus)</strong></td><td><strong>~€8,00</strong> — após esse valor, viagens são grátis no dia</td></tr>
+        <tr class="hl"><td><strong>Cap semanal (bus)</strong></td><td><strong>~€32,00</strong> — segunda a domingo</td></tr>
+        <tr class="hl"><td><strong>Cap semanal (todos)</strong></td><td><strong>~€40,00</strong> — bus + Luas + DART combinados</td></tr>
+        <tr><td><strong>Leap Visitor Card</strong></td><td>€33 (72h de viagens ilimitadas) — ideal para visitas de familiares do Brasil</td></tr>
+        <tr><td><strong>Tarifa jovem (19–25)</strong></td><td>Young Adult Leap: <strong>50% de desconto</strong> em todas as tarifas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card" style="border-top:3px solid var(--green-bright)">
+      <h4>💰 Custo mensal típico de transporte</h4>
+      <table class="data-table mt8">
+        <thead><tr><th>Perfil</th><th>Custo/mês</th></tr></thead>
+        <tbody>
+          <tr><td>Bus apenas (5 dias/semana)</td><td>€100–130</td></tr>
+          <tr><td>Bus + Luas/DART (misto)</td><td>€130–160</td></tr>
+          <tr><td>Com Tax Saver (economia)</td><td>€65–100</td></tr>
+          <tr><td>Dublin Bikes + bus eventual</td><td>€40–60</td></tr>
+          <tr class="hl"><td><strong>Média geral</strong></td><td><strong>€100–160</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="border-top:3px solid var(--gold)">
+      <h4>🎫 Tax Saver Ticket — Economize até 52%</h4>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>O que é:</strong> programa do governo onde seu empregador desconta o passe anual do salário bruto, antes dos impostos</li>
+        <li><strong>Economia real:</strong> até <strong>52%</strong> dependendo da sua faixa de imposto (20% ou 40%)</li>
+        <li><strong>Passe anual bus:</strong> ~€1.400 → você paga ~€672 (faixa 40%) ou ~€1.064 (faixa 20%)</li>
+        <li><strong>Passe anual bus+Luas+DART:</strong> ~€1.800 → ~€864 na faixa 40%</li>
+        <li><strong>Como aderir:</strong> peça ao RH/empregador; disponível via taxsaver.ie</li>
+        <li>Disponível após período probatório — pergunte logo na primeira semana de trabalho</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-amber mt16">
+    <span class="icon">💡</span>
+    <p><strong>Dica de brasileiro para brasileiro:</strong> para os primeiros meses, use Leap Card com cap semanal. Quando tiver emprego fixo, peça o Tax Saver ao empregador — é a maior economia possível. Baixe o app <strong>TFI Live</strong> (horários em tempo real) e <strong>TFI Go</strong> (pagar pelo celular sem Leap Card físico).</p>
+  </div>
+</div>
+
 <!-- ─── DIFERENÇAS CULTURAIS ──────────────── -->
 <div class="section" id="dicas">
   <div class="section-header">
@@ -1887,6 +2154,94 @@ em{font-style:italic}
   </div>
 </div>
 
+<!-- ─── IMPOSTOS & TAX CREDITS ──────────── -->
+<div class="section" id="impostos">
+  <div class="section-header">
+    <div class="section-icon" style="background:#FFF8E7">📊</div>
+    <div>
+      <div class="section-title">Impostos & Tax Credits</div>
+      <div class="section-sub">PAYE, USC, PRSI explicados — e como pagar menos imposto legalmente</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Os 3 impostos sobre o salário na Irlanda (2026)</h3>
+    <table class="data-table">
+      <thead><tr><th>Imposto</th><th>Faixas & Alíquotas</th><th>Para que serve</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PAYE</strong> (Income Tax)</td><td>20% até €44.000 / 40% acima (single). Casados podem ter banda alargada até €53.000</td><td>Imposto de renda principal</td></tr>
+        <tr><td><strong>USC</strong> (Universal Social Charge)</td><td>0,5% até €12.012 · 2% até €25.760 · 4% até €70.044 · 8% acima</td><td>Contribuição social universal</td></tr>
+        <tr><td><strong>PRSI</strong> (Social Insurance)</td><td>4% sobre todo o salário bruto</td><td>Seguro social (aposentadoria, desemprego, maternidade)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card mt16">
+    <h3>Tax Credits 2026 — como reduzem seu imposto</h3>
+    <p>Tax credits são <strong>abatidos diretamente do imposto calculado</strong>, não da renda. Ou seja, se o PAYE calculado é €5.000 e você tem €3.750 em credits, paga apenas €1.250.</p>
+    <div class="stat-row mt12">
+      <div class="stat-card"><div class="val" style="color:var(--green-light)">€1.875</div><div class="lbl">Personal Tax Credit</div><div class="sub">todo residente</div></div>
+      <div class="stat-card"><div class="val" style="color:var(--green-light)">€1.875</div><div class="lbl">Employee Tax Credit</div><div class="sub">trabalhador PAYE</div></div>
+      <div class="stat-card"><div class="val text-green">€3.750</div><div class="lbl">Total mínimo</div><div class="sub">credits combinados</div></div>
+    </div>
+    <div class="callout callout-gold mt12">
+      <span class="icon">💡</span>
+      <p><strong>Dica:</strong> Existem credits adicionais — Rent Tax Credit (€750/ano para inquilinos), Single Parent Credit (€1.750) e mais. Verifique todos em <a href="https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/" target="_blank">revenue.ie</a>.</p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>Exemplo prático — Salário mínimo full-time (2026)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px">€14,15/h × 40h × 52 semanas = €29.432 bruto/ano (€2.453/mês)</p>
+    <table class="data-table">
+      <thead><tr><th>Item</th><th>Cálculo</th><th>Valor/ano</th></tr></thead>
+      <tbody>
+        <tr><td>Salário bruto</td><td>€14,15 × 40h × 52</td><td><strong>€29.432</strong></td></tr>
+        <tr><td>PAYE (20%)</td><td>€29.432 × 20% = €5.886 − credits €3.750</td><td>−€2.136</td></tr>
+        <tr><td>USC</td><td>0,5%+2%+4% nas faixas</td><td>−€608</td></tr>
+        <tr><td>PRSI (4%)</td><td>€29.432 × 4%</td><td>−€1.177</td></tr>
+        <tr class="hl"><td><strong>Líquido anual</strong></td><td></td><td><strong>€25.511 (~€2.126/mês)</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px">Taxa efetiva total: ~13,3%. Na Irlanda, quem ganha salário mínimo paga pouco imposto graças aos tax credits generosos.</p>
+  </div>
+
+  <div class="card mt16">
+    <h3>Emergency Tax — o que é e como resolver</h3>
+    <p>Se você começar a trabalhar <strong>sem PPS Number</strong> ou sem registrar o emprego na Revenue, o empregador é obrigado a aplicar <strong>emergency tax: 40% de PAYE + 8% USC</strong>. Resultado: quase metade do salário retido.</p>
+    <div class="callout callout-red mt12">
+      <span class="icon">🚨</span>
+      <p><strong>Exemplo real:</strong> No salário mínimo, emergency tax reduz seu líquido mensal de ~€2.126 para ~€1.275. São quase €900/mês perdidos até resolver.</p>
+    </div>
+    <p class="mt12"><strong>Como resolver:</strong></p>
+    <ul class="dots">
+      <li>Obtenha seu PPS Number (ver seção PPS)</li>
+      <li>Acesse <a href="https://www.revenue.ie/en/online-services/services/manage-your-record/my-account.aspx" target="_blank">Revenue myAccount</a> e registre seu emprego em "Manage Your Tax" → "Add New Job"</li>
+      <li>A Revenue emite um Revenue Payroll Notification (RPN) ao empregador — seus impostos serão corrigidos automaticamente no próximo pagamento</li>
+      <li>O excesso pago é <strong>devolvido automaticamente</strong> nos contracheques seguintes (refund)</li>
+    </ul>
+  </div>
+
+  <div class="card mt16">
+    <h3>Revenue myAccount — seu painel fiscal</h3>
+    <ul class="dots">
+      <li><strong>Criar conta:</strong> acesse <a href="https://www.ros.ie/myaccount-web/register.html" target="_blank">revenue.ie/myAccount</a> com MyGovID verificado + PPS Number</li>
+      <li><strong>Registrar emprego:</strong> "Manage Your Tax" → "Update Job or Pension" → informar employer number</li>
+      <li><strong>Pedir refund:</strong> "Review Your Tax" → selecionar ano → "Request a Review" (Revenue recalcula e devolve)</li>
+      <li><strong>Declaração anual:</strong> Se você tiver apenas renda PAYE, a declaração é automática. Verifique todo janeiro para garantir que recebeu todos os credits</li>
+    </ul>
+  </div>
+
+  <div class="card mt16">
+    <h3>Casados — economia fiscal real</h3>
+    <p>Casais com joint assessment podem <strong>transferir tax credits e bandas de imposto</strong> entre si. Se um cônjuge ganha menos (ou não trabalha), o outro pode usar os credits e pagar 20% em vez de 40% sobre uma faixa maior — até €53.000 em vez de €44.000.</p>
+    <div class="callout callout-green mt12">
+      <span class="icon">✅</span>
+      <p><strong>Como ativar:</strong> Em Revenue myAccount, vá em "Manage Your Tax" → "Manage Your Tax for Current Year" → selecione "Joint Assessment". Ambos precisam ter PPS Number.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ─── ORÇAMENTO ──────────────────────────── -->
 <div class="section" id="orcamento">
   <div class="section-header">
@@ -2029,6 +2384,175 @@ em{font-style:italic}
   </div>
 </div>
 
+<!-- ─── EDUCAÇÃO & IDIOMA ───────────────── -->
+<div class="section" id="educacao">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D6EAF8">📚</div>
+    <div>
+      <div class="section-title">Educação & Idioma</div>
+      <div class="section-sub">Cursos de inglês, reconhecimento de diplomas e sistema educacional</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🆓 Cursos de inglês gratuitos</h3>
+    <p style="margin-top:8px">A Irlanda oferece opções gratuitas de inglês para residentes, principalmente através dos <strong>ETBs (Education and Training Boards)</strong>.</p>
+    <ul class="dots mt8" style="font-size:13px">
+      <li><strong>ESOL Classes (ETB):</strong> cursos de English for Speakers of Other Languages disponíveis em vários níveis (iniciante a avançado). Inscrição geralmente em setembro e janeiro. Consulte <a href="https://www.cityofdublinet.ie" target="_blank">City of Dublin ETB</a></li>
+      <li><strong>Bibliotecas públicas:</strong> muitas bibliotecas de Dublin oferecem conversation classes gratuitas e clubes de leitura em inglês — consulte <a href="https://www.dublincity.ie/residential/libraries" target="_blank">Dublin City Libraries</a></li>
+      <li><strong>Failte Isteach:</strong> voluntários irlandeses ensinam inglês gratuitamente a imigrantes em sessões semanais — <a href="https://www.thirdageireland.ie/failte-isteach" target="_blank">thirdageireland.ie</a></li>
+      <li><strong>Community centres:</strong> centros comunitários locais frequentemente oferecem aulas básicas gratuitas</li>
+    </ul>
+    <div class="callout callout-amber mt12">
+      <span class="icon">⚠️</span>
+      <p><strong>Atenção:</strong> a maioria dos cursos gratuitos exige comprovante de residência na Irlanda e, em alguns casos, <strong>status migratório regular</strong> (Stamp 1, 4, etc.). Vagas são limitadas — inscreva-se cedo.</p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>💰 Escolas de inglês pagas</h3>
+    <p style="margin-top:8px">Dublin é um dos maiores polos de escolas de inglês da Europa. Há dezenas de opções com diferentes metodologias e preços.</p>
+    <table class="data-table mt12">
+      <thead><tr><th>Tipo de curso</th><th>Faixa de preço</th><th>Detalhes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>General English (15h/semana)</strong></td><td>€150–200/mês</td><td>Manhã ou tarde, turmas multinacionais</td></tr>
+        <tr><td><strong>Intensivo (20–25h/semana)</strong></td><td>€200–300/mês</td><td>Progressão mais rápida</td></tr>
+        <tr><td><strong>Preparatório IELTS/Cambridge</strong></td><td>€250–350/mês</td><td>Foco em certificação oficial</td></tr>
+        <tr><td><strong>Business English</strong></td><td>€200–300/mês</td><td>Vocabulário corporativo e apresentações</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-blue mt12">
+      <span class="icon">💡</span>
+      <p><strong>Dica:</strong> antes de escolher uma escola, verifique se é reconhecida pela <strong>ACELS/QQI</strong> (órgão regulador irlandês). Escolas não credenciadas podem ter qualidade inferior e não servem para fins de visto. Pesquise avaliações de outros brasileiros nos grupos de Facebook.</p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>🎓 Reconhecimento de diplomas — QQI/NARIC</h3>
+    <p style="margin-top:8px">Para usar seu diploma brasileiro na Irlanda (emprego qualificado, pós-graduação ou profissões regulamentadas), é necessário obter a <strong>equivalência oficial</strong>.</p>
+    <ul class="dots mt8" style="font-size:13px">
+      <li><strong>Órgão responsável:</strong> QQI (Quality and Qualifications Ireland) através do sistema <a href="https://www.qqi.ie/what-we-do/the-qualifications-system/national-academic-recognition-information-centre" target="_blank">NARIC Ireland</a></li>
+      <li><strong>Comparação gratuita:</strong> a ferramenta online NARIC permite comparar seu diploma com o NFQ (National Framework of Qualifications) sem custo — resultado indicativo</li>
+      <li><strong>Reconhecimento formal:</strong> se precisar de um documento oficial de equivalência, o custo é de aproximadamente <strong>€200</strong></li>
+      <li><strong>Documentos necessários:</strong> diploma original, histórico escolar, tradução juramentada para inglês (sworn translation)</li>
+      <li><strong>Prazo:</strong> 8–12 semanas para análise completa</li>
+    </ul>
+    <div class="callout callout-green mt12">
+      <span class="icon">✅</span>
+      <p><strong>Profissões regulamentadas</strong> (engenheiro, enfermeiro, médico, professor) exigem reconhecimento pelo órgão específico da categoria, além do NARIC. Consulte a lista em <a href="https://www.gov.ie/en/publication/d8b1c-regulated-professions-in-ireland/" target="_blank">gov.ie</a></p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>🏫 Sistema educacional irlandês — para quem tem filhos</h3>
+    <p style="margin-top:8px">A educação na Irlanda é <strong>gratuita</strong> nas escolas públicas e financiadas pelo estado. O sistema é dividido em:</p>
+    <table class="data-table mt12">
+      <thead><tr><th>Nível</th><th>Idade</th><th>Custo</th><th>Detalhes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Primary School</strong></td><td>4–12 anos</td><td><span class="badge badge-green">Gratuito</span></td><td>Junior Infants a 6th Class. Uniforme obrigatório (~€50–100)</td></tr>
+        <tr><td><strong>Secondary School</strong></td><td>12–18 anos</td><td><span class="badge badge-green">Gratuito</span></td><td>1st Year a 6th Year. Inclui Junior Cycle e Leaving Cert</td></tr>
+        <tr><td><strong>ECCE (pré-escola)</strong></td><td>2,5–5,5 anos</td><td><span class="badge badge-green">Gratuito</span></td><td>15h/semana gratuitas pelo programa ECCE do governo</td></tr>
+        <tr><td><strong>Creche particular</strong></td><td>0–5 anos</td><td>€800–1.200/mês</td><td>Subsídio NCS pode reduzir significativamente o custo</td></tr>
+      </tbody>
+    </table>
+    <ul class="dots mt12" style="font-size:13px">
+      <li><strong>Como matricular:</strong> contate diretamente a escola desejada. Muitas têm lista de espera — aplique o quanto antes, especialmente em áreas populares de Dublin</li>
+      <li><strong>Documentos:</strong> certidão de nascimento da criança, comprovante de endereço, PPS Number da criança</li>
+      <li><strong>Suporte linguístico:</strong> escolas oferecem EAL (English as an Additional Language) gratuito para crianças que não falam inglês</li>
+    </ul>
+    <div class="callout callout-blue mt12">
+      <span class="icon">💡</span>
+      <p><strong>Free schoolbooks scheme:</strong> desde 2023, o governo irlandês fornece livros didáticos <strong>gratuitos</strong> para alunos de primary e secondary schools — um alívio considerável no orçamento familiar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COMUNIDADE BRASILEIRA ───────────── -->
+<div class="section" id="comunidade">
+  <div class="section-header">
+    <div class="section-icon" style="background:#D8F3DC">🇧🇷</div>
+    <div>
+      <div class="section-title">Comunidade Brasileira</div>
+      <div class="section-sub">Consulado, grupos, lojas e a comunidade brasileira em Dublin</div>
+    </div>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="icon">🇧🇷</span>
+    <p>A Irlanda abriga uma das maiores comunidades brasileiras na Europa — estimam-se entre <strong>70.000 e 100.000 brasileiros</strong> vivendo no país, a grande maioria em Dublin e região metropolitana.</p>
+  </div>
+
+  <div class="card mt16">
+    <h3>🏛️ Consulado-Geral do Brasil em Dublin</h3>
+    <p style="margin-top:8px">O Consulado atende brasileiros residentes na Irlanda para serviços essenciais. <strong>Agendamento online obrigatório</strong> para todos os serviços.</p>
+    <ul class="dots mt8" style="font-size:13px">
+      <li><strong>Endereço:</strong> Block 8, Harcourt Centre, Charlotte Way, Dublin 2, D02 K580</li>
+      <li><strong>Agendamento:</strong> exclusivamente pelo sistema online em <a href="https://www.gov.br/mre/pt-br/consulado-dublin" target="_blank">gov.br/consulado-dublin</a></li>
+      <li><strong>Horário de atendimento:</strong> segunda a sexta, 9h–13h (atendimento ao público)</li>
+    </ul>
+    <table class="data-table mt12">
+      <thead><tr><th>Serviço</th><th>Custo aprox.</th><th>Prazo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Passaporte</strong></td><td>€70–90</td><td>4–6 semanas</td></tr>
+        <tr><td><strong>2ª via de CPF</strong></td><td>Gratuito</td><td>Imediato (online)</td></tr>
+        <tr><td><strong>Título de eleitor</strong></td><td>Gratuito</td><td>Imediato</td></tr>
+        <tr><td><strong>Registro de nascimento</strong></td><td>€15</td><td>Variável</td></tr>
+        <tr><td><strong>Procuração</strong></td><td>€20–40</td><td>Mesmo dia</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-amber mt12">
+      <span class="icon">⚠️</span>
+      <p><strong>Importante:</strong> se você está em situação eleitoral irregular, regularize no Consulado para evitar problemas com emissão de passaporte e outros documentos. Justificativas de ausência podem ser feitas presencialmente.</p>
+    </div>
+  </div>
+
+  <div class="card mt16">
+    <h3>💬 Comunidade online</h3>
+    <p style="margin-top:8px">Os brasileiros em Dublin são extremamente ativos nas redes sociais. Esses grupos são o melhor recurso para dúvidas práticas do dia a dia.</p>
+    <ul class="dots mt8" style="font-size:13px">
+      <li><strong>Facebook:</strong> grupos como "Brasileiros em Dublin", "Brasileiros na Irlanda" e variações por tema (moradia, emprego, mães) com milhares de membros ativos</li>
+      <li><strong>WhatsApp/Telegram:</strong> grupos menores e regionalizados (por bairro, cidade ou interesse) — peça convite nos grupos de Facebook</li>
+      <li><strong>Instagram/TikTok:</strong> perfis de brasileiros na Irlanda compartilham dicas em vídeo sobre custo de vida, documentação e adaptação</li>
+      <li><strong>Reddit:</strong> r/Brazil e r/ireland têm posts úteis, mas menos ativos que Facebook para a comunidade brasileira</li>
+    </ul>
+    <div class="callout callout-blue mt12">
+      <span class="icon">💡</span>
+      <p><strong>Dica:</strong> use a busca dentro dos grupos de Facebook antes de perguntar — a maioria das dúvidas comuns (PPS, IRP, moradia) já foi respondida dezenas de vezes. Isso evita respostas impacientes e você encontra a informação mais rápido.</p>
+    </div>
+  </div>
+
+  <div class="card-grid cols2 mt16">
+    <div class="card">
+      <h4>🛒 Lojas e restaurantes brasileiros</h4>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">Dublin tem uma boa oferta de produtos brasileiros, concentrada principalmente nas áreas com maior presença da comunidade.</p>
+      <ul class="dots mt8" style="font-size:13px">
+        <li>Lojas de produtos brasileiros em várias áreas de Dublin (especialmente city centre e subúrbios populares)</li>
+        <li>Produtos encontrados: pão de queijo, farofa, guaraná, Maizena, temperos, feijão preto, carne seca</li>
+        <li>Açougues brasileiros com cortes típicos (picanha, fraldinha, costela)</li>
+        <li>Restaurantes e lanchonetes com comida brasileira: marmitas, coxinhas, pastéis, açaí</li>
+        <li>Padarias brasileiras com pão francês e salgados</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>🎉 Eventos e cultura</h4>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">A comunidade brasileira mantém a cultura viva em Dublin com eventos regulares ao longo do ano.</p>
+      <ul class="dots mt8" style="font-size:13px">
+        <li><strong>Carnaval:</strong> festas de Carnaval organizadas pela comunidade (fevereiro/março)</li>
+        <li><strong>Festa Junina:</strong> arraiais em Dublin com quadrilha, comidas típicas e forró</li>
+        <li><strong>Missas em português:</strong> igrejas católicas e evangélicas com cultos em português</li>
+        <li><strong>Futebol society:</strong> ligas brasileiras de futebol society em diversos campos de Dublin</li>
+        <li><strong>Shows e pagode:</strong> artistas brasileiros frequentemente fazem shows em Dublin</li>
+        <li><strong>Brazilian Day:</strong> evento anual celebrando a cultura brasileira na Irlanda</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-green mt16">
+    <span class="icon">✅</span>
+    <p><strong>A comunidade brasileira é uma das mais organizadas e solidárias em Dublin.</strong> Ao chegar, conecte-se aos grupos online — você encontrará desde indicações de quarto e emprego até amizades que tornam a adaptação muito mais leve.</p>
+  </div>
+</div>
+
 <!-- ─── CHECKLIST ─────────────────────────── -->
 <div class="section" id="checklist">
   <div class="section-header">
@@ -2117,10 +2641,34 @@ em{font-style:italic}
 </main>
 
 <script>
+// ─── Mobile menu
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+const sidebar = document.getElementById('sidebar');
+
+function openMenu() {
+  sidebar.classList.add('open');
+  menuOverlay.style.display = 'block';
+  requestAnimationFrame(() => menuOverlay.classList.add('visible'));
+  menuToggle.textContent = '✕';
+}
+function closeMenu() {
+  sidebar.classList.remove('open');
+  menuOverlay.classList.remove('visible');
+  setTimeout(() => menuOverlay.style.display = 'none', 300);
+  menuToggle.textContent = '☰';
+}
+
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.contains('open') ? closeMenu() : openMenu();
+});
+menuOverlay.addEventListener('click', closeMenu);
+
 // ─── Navigation
 function setActive(el) {
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   el.classList.add('active');
+  closeMenu();
 }
 
 // ─── Person toggle
