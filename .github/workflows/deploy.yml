@@ -1,4 +1,4 @@
-name: Version Bump & Deploy
+name: Version Bump
 
 on:
   push:
@@ -8,8 +8,10 @@ permissions:
   contents: write
 
 jobs:
-  version-and-deploy:
+  version-bump:
     runs-on: ubuntu-latest
+    # Skip version bump on automated commits from this workflow
+    if: "!startsWith(github.event.head_commit.message, 'chore: bump version')"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,7 +50,7 @@ jobs:
           # Update version in sidebar of index.html
           sed -i "s|<div class=\"sidebar-version\">v[0-9]*\.[0-9]*\.[0-9]*</div>|<div class=\"sidebar-version\">v${NEW_VERSION}</div>|g" index.html
 
-      - name: Commit version bump
+      - name: Commit and push version bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -56,10 +58,4 @@ jobs:
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: bump version to v${{ steps.version.outputs.version }}"
           git push
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name ireland
+          # Cloudflare Pages deploys automatically via GitHub integration
