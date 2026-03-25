@@ -22,7 +22,61 @@
 <meta name="twitter:image" content="https://ireland.gavriel.com.br/og-image.png">
 <!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☘️</text></svg>">
+<!-- AdSense & Search Console verification -->
+<meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+<meta name="google-site-verification" content="VERIFICATION_CODE_HERE">
 <title>Guia Dublin 2026 — Nos Viajante</title>
+<!-- Google Consent Mode v2 — default: all denied until user consents -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>gtag('js',new Date());gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});</script>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+[{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Guia Dublin 2026",
+  "alternateName":"Nos Viajante - Guia Dublin",
+  "url":"https://ireland.gavriel.com.br/",
+  "description":"Guia completo e atualizado para brasileiros mudando para Dublin, Irlanda em 2026",
+  "inLanguage":"pt-BR",
+  "publisher":{"@type":"Organization","name":"Nos Viajante","url":"https://ireland.gavriel.com.br/"}
+},{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Nos Viajante",
+  "url":"https://ireland.gavriel.com.br/",
+  "sameAs":["https://www.youtube.com/@nos.viajante"]
+},{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Início","item":"https://ireland.gavriel.com.br/#inicio"},
+    {"@type":"ListItem","position":2,"name":"Orçamento","item":"https://ireland.gavriel.com.br/#orcamento"},
+    {"@type":"ListItem","position":3,"name":"PPS Number","item":"https://ireland.gavriel.com.br/#pps"},
+    {"@type":"ListItem","position":4,"name":"Cidadania","item":"https://ireland.gavriel.com.br/#cidadao-eu"},
+    {"@type":"ListItem","position":5,"name":"Trabalho","item":"https://ireland.gavriel.com.br/#trabalho"},
+    {"@type":"ListItem","position":6,"name":"Moradia","item":"https://ireland.gavriel.com.br/#moradia"},
+    {"@type":"ListItem","position":7,"name":"Transporte","item":"https://ireland.gavriel.com.br/#transporte"},
+    {"@type":"ListItem","position":8,"name":"Checklist","item":"https://ireland.gavriel.com.br/#checklist"}
+  ]
+},{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Quanto custa morar em Dublin em 2026?","acceptedAnswer":{"@type":"Answer","text":"O custo de vida em Dublin para um casal varia entre €2.800 e €4.500 por mês, incluindo aluguel, alimentação, transporte e lazer. Um quarto em casa compartilhada custa entre €800 e €1.200, enquanto um apartamento de 1 quarto fica entre €1.600 e €2.200."}},
+    {"@type":"Question","name":"Como tirar o PPS Number na Irlanda?","acceptedAnswer":{"@type":"Answer","text":"O PPS Number é o número de identificação fiscal irlandês. Para obtê-lo, você precisa agendar um horário no escritório do DEASP mais próximo, levar passaporte, comprovante de endereço e carta do empregador ou comprovante de motivo para solicitar."}},
+    {"@type":"Question","name":"Brasileiros precisam de visto para a Irlanda?","acceptedAnswer":{"@type":"Answer","text":"Brasileiros não precisam de visto para entrar na Irlanda para estadias de até 90 dias. Para morar e trabalhar, é necessário ter um visto de trabalho (work permit), ser cônjuge de cidadão EU, ou ter direito à cidadania europeia."}},
+    {"@type":"Question","name":"Qual o salário mínimo na Irlanda em 2026?","acceptedAnswer":{"@type":"Answer","text":"O salário mínimo na Irlanda é revisado anualmente. Em 2025 era de €13,50 por hora. Consulte o site do governo irlandês para o valor atualizado de 2026."}},
+    {"@type":"Question","name":"Como abrir conta bancária na Irlanda?","acceptedAnswer":{"@type":"Answer","text":"Os principais bancos na Irlanda são AIB, Bank of Ireland e Permanent TSB. Para abrir conta, você geralmente precisa de PPS Number, passaporte e comprovante de endereço. Bancos digitais como Revolut e N26 são alternativas populares enquanto aguarda a conta tradicional."}},
+    {"@type":"Question","name":"Como funciona o transporte público em Dublin?","acceptedAnswer":{"@type":"Answer","text":"Dublin possui ônibus (Dublin Bus), tram (Luas) e trem suburbano (DART). O Leap Card é o cartão de transporte integrado que oferece tarifas reduzidas. Um passe mensal custa a partir de €120."}}
+  ]
+}]
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -308,6 +362,7 @@ body{
   font-weight:700;
   color:var(--green-mid);
   line-height:1.2;
+  margin:0;
 }
 .section-sub{font-size:13px;color:var(--muted);margin-top:3px}
 
@@ -678,6 +733,97 @@ em{font-style:italic}
   .section{padding:28px 20px 36px}
   .yt-banner{margin:16px 16px;flex-direction:column;align-items:flex-start}
   .cols2,.cols3,.cols4{grid-template-columns:1fr}
+  .site-footer{padding:24px 16px}
+  .site-footer .footer-links{flex-direction:column;gap:8px}
+  .cookie-banner .cookie-actions{flex-direction:column}
+  .cookie-banner .cookie-actions button{width:100%}
+}
+
+/* ─── FOOTER ─────────────────────── */
+.site-footer{
+  background:var(--green-dark);
+  color:rgba(255,255,255,0.6);
+  padding:32px 40px;
+  font-size:13px;
+  line-height:1.6;
+}
+.site-footer .footer-inner{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+.site-footer .footer-links{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  margin-bottom:12px;
+}
+.site-footer .footer-links a{
+  color:var(--green-pale);
+  text-decoration:none;
+  font-weight:500;
+  transition:color 0.2s;
+}
+.site-footer .footer-links a:hover{color:var(--white)}
+.site-footer .footer-copy{margin:8px 0 4px;color:rgba(255,255,255,0.5)}
+.site-footer .footer-disclaimer{
+  font-size:11px;
+  color:rgba(255,255,255,0.35);
+  max-width:600px;
+  margin:8px auto 0;
+}
+
+/* ─── COOKIE CONSENT BANNER ──────── */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:9999;
+  background:var(--white);
+  box-shadow:0 -4px 24px rgba(0,0,0,0.15);
+  padding:20px 24px;
+  transform:translateY(100%);
+  transition:transform 0.4s ease;
+}
+.cookie-banner.visible{transform:translateY(0)}
+.cookie-inner{
+  max-width:960px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.cookie-text{flex:1;font-size:13px;line-height:1.5;color:var(--text)}
+.cookie-text a{color:var(--green-bright)}
+.cookie-actions{
+  display:flex;
+  gap:10px;
+  flex-shrink:0;
+}
+.cookie-actions button{
+  border:none;
+  cursor:pointer;
+  padding:10px 20px;
+  border-radius:var(--radius-sm);
+  font-family:'Nunito',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  transition:all 0.2s;
+}
+.cookie-btn-accept{
+  background:var(--green-bright);
+  color:var(--white);
+}
+.cookie-btn-accept:hover{background:var(--green-dark)}
+.cookie-btn-essential{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid var(--border) !important;
+}
+.cookie-btn-essential:hover{
+  background:var(--cream);
+  color:var(--text);
 }
 </style>
 </head>
@@ -811,7 +957,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D6EAF8">🌦️</div>
     <div>
-      <div class="section-title">Clima de Dublin</div>
+      <h2 class="section-title">Clima de Dublin</h2>
       <div class="section-sub">4 estações em 1 dia — prepare-se para o inesperado</div>
     </div>
   </div>
@@ -859,7 +1005,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">📄</div>
     <div>
-      <div class="section-title">PPS Number — Prioridade #1</div>
+      <h2 class="section-title">PPS Number — Prioridade #1</h2>
       <div class="section-sub">Sem PPS você paga imposto de emergência: 40% + 8% USC = 48% do salário</div>
     </div>
   </div>
@@ -936,7 +1082,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D6EAF8">🏦</div>
     <div>
-      <div class="section-title">Contas Bancárias</div>
+      <h2 class="section-title">Contas Bancárias</h2>
       <div class="section-sub">O que abrir antes de chegar e o que espera na Irlanda</div>
     </div>
   </div>
@@ -982,7 +1128,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#E8DAEF">📱</div>
     <div>
-      <div class="section-title">Chip de Celular</div>
+      <h2 class="section-title">Chip de Celular</h2>
       <div class="section-sub">Melhores opções para recém-chegados</div>
     </div>
   </div>
@@ -1006,7 +1152,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">🇪🇺</div>
     <div>
-      <div class="section-title">Cidadão EU (não irlandês) na Irlanda</div>
+      <h2 class="section-title">Cidadão EU (não irlandês) na Irlanda</h2>
       <div class="section-sub">Direitos automáticos, documentos necessários e caminho para cidadania irlandesa</div>
     </div>
   </div>
@@ -1076,7 +1222,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FDEBD0">💑</div>
     <div>
-      <div class="section-title">Cônjuge Brasileiro de Cidadão EU — EU Treaty Rights</div>
+      <h2 class="section-title">Cônjuge Brasileiro de Cidadão EU — EU Treaty Rights</h2>
       <div class="section-sub">Como regularizar o parceiro não-EU. Sem requisito mínimo de renda!</div>
     </div>
   </div>
@@ -1140,7 +1286,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D6EAF8">💍</div>
     <div>
-      <div class="section-title">Cônjuge de Cidadão Irlandês</div>
+      <h2 class="section-title">Cônjuge de Cidadão Irlandês</h2>
       <div class="section-sub">Stamp 4 + caminho para naturalização em 3 anos</div>
     </div>
   </div>
@@ -1174,7 +1320,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FDEBD0">🍀</div>
     <div>
-      <div class="section-title">Descendência Irlandesa — Foreign Births Register</div>
+      <h2 class="section-title">Descendência Irlandesa — Foreign Births Register</h2>
       <div class="section-sub">Avô ou avó nascido na Irlanda? Você pode ser cidadão irlandês</div>
     </div>
   </div>
@@ -1226,7 +1372,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">💼</div>
     <div>
-      <div class="section-title">Trabalho & Emprego</div>
+      <h2 class="section-title">Trabalho & Emprego</h2>
       <div class="section-sub">Onde procurar, setores com mais vagas e direitos trabalhistas</div>
     </div>
   </div>
@@ -1311,7 +1457,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">🏠</div>
     <div>
-      <div class="section-title">Moradia & Aluguel</div>
+      <h2 class="section-title">Moradia & Aluguel</h2>
       <div class="section-sub">Custos reais de Dublin 2026 validados pelo Daft.ie</div>
     </div>
   </div>
@@ -1363,7 +1509,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#E8DAEF">👕</div>
     <div>
-      <div class="section-title">Roupas & Lavanderia</div>
+      <h2 class="section-title">Roupas & Lavanderia</h2>
       <div class="section-sub">O que comprar, onde, quanto gastar e com que frequência lavar</div>
     </div>
   </div>
@@ -1508,7 +1654,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">🛏️</div>
     <div>
-      <div class="section-title">Itens Essenciais do Lar</div>
+      <h2 class="section-title">Itens Essenciais do Lar</h2>
       <div class="section-sub">O que comprar ao chegar — quarto, cozinha, banheiro e eletricidade</div>
     </div>
   </div>
@@ -1577,7 +1723,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">🛒</div>
     <div>
-      <div class="section-title">Supermercados & Alimentação em Casa</div>
+      <h2 class="section-title">Supermercados & Alimentação em Casa</h2>
       <div class="section-sub">Onde comprar, quanto gastar e como montar uma rotina alimentar</div>
     </div>
   </div>
@@ -1618,7 +1764,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FDEBD0">🍽️</div>
     <div>
-      <div class="section-title">Comer Fora em Dublin</div>
+      <h2 class="section-title">Comer Fora em Dublin</h2>
       <div class="section-sub">4 faixas de preço — do chipper ao Michelin</div>
     </div>
   </div>
@@ -1713,7 +1859,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FDEBD0">🚗</div>
     <div>
-      <div class="section-title">Carro & CNH</div>
+      <h2 class="section-title">Carro & CNH</h2>
       <div class="section-sub">Melhores modelos, custos reais e a situação da carteira brasileira</div>
     </div>
   </div>
@@ -1773,7 +1919,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D6EAF8">🚌</div>
     <div>
-      <div class="section-title">Transporte Público</div>
+      <h2 class="section-title">Transporte Público</h2>
       <div class="section-sub">Dublin Bus, Luas, DART, Leap Card e custos mensais</div>
     </div>
   </div>
@@ -1886,7 +2032,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FAEEDA">🍀</div>
     <div>
-      <div class="section-title">Irlanda na Prática</div>
+      <h2 class="section-title">Irlanda na Prática</h2>
       <div class="section-sub">Tudo que é diferente — tomadas, trânsito, gorjetas, costumes e vocabulário</div>
     </div>
   </div>
@@ -2006,7 +2152,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">🏰</div>
     <div>
-      <div class="section-title">Pontos Turísticos de Dublin</div>
+      <h2 class="section-title">Pontos Turísticos de Dublin</h2>
       <div class="section-sub">Preços 2026, atrações gratuitas e passeios de dia</div>
     </div>
   </div>
@@ -2071,7 +2217,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FAEEDA">🍺</div>
     <div>
-      <div class="section-title">Bares, Lazer & Entretenimento</div>
+      <h2 class="section-title">Bares, Lazer & Entretenimento</h2>
       <div class="section-sub">Pubs, trad music, cinema, academia, shows e quanto custa se divertir</div>
     </div>
   </div>
@@ -2168,7 +2314,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#FFF8E7">📊</div>
     <div>
-      <div class="section-title">Impostos & Tax Credits</div>
+      <h2 class="section-title">Impostos & Tax Credits</h2>
       <div class="section-sub">PAYE, USC, PRSI explicados — e como pagar menos imposto legalmente</div>
     </div>
   </div>
@@ -2256,7 +2402,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">💰</div>
     <div>
-      <div class="section-title">Simulador de Orçamento 2026</div>
+      <h2 class="section-title">Simulador de Orçamento 2026</h2>
       <div class="section-sub">Dados validados — salário mínimo corrigido para €2.157 líquido/mês</div>
     </div>
   </div>
@@ -2398,7 +2544,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D6EAF8">📚</div>
     <div>
-      <div class="section-title">Educação & Idioma</div>
+      <h2 class="section-title">Educação & Idioma</h2>
       <div class="section-sub">Cursos de inglês, reconhecimento de diplomas e sistema educacional</div>
     </div>
   </div>
@@ -2481,7 +2627,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">🇧🇷</div>
     <div>
-      <div class="section-title">Comunidade Brasileira</div>
+      <h2 class="section-title">Comunidade Brasileira</h2>
       <div class="section-sub">Consulado, grupos, lojas e a comunidade brasileira em Dublin</div>
     </div>
   </div>
@@ -2567,7 +2713,7 @@ em{font-style:italic}
   <div class="section-header">
     <div class="section-icon" style="background:#D8F3DC">✅</div>
     <div>
-      <div class="section-title">Checklist — Lista de Tarefas</div>
+      <h2 class="section-title">Checklist — Lista de Tarefas</h2>
       <div class="section-sub">Antes de ir, ao chegar e nos primeiros meses</div>
     </div>
   </div>
@@ -2648,6 +2794,34 @@ em{font-style:italic}
 </div>
 
 </main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-links">
+      <a href="/privacy.html">Política de Privacidade</a>
+      <a href="/terms.html">Termos de Uso</a>
+      <a href="https://www.youtube.com/@nos.viajante" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Nos Viajante. Todos os direitos reservados.</p>
+    <p class="footer-disclaimer">Este guia é informativo e não constitui consultoria jurídica, migratória ou financeira. Sempre verifique as informações com fontes oficiais antes de tomar decisões.</p>
+  </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Consentimento de cookies">
+  <div class="cookie-inner">
+    <p class="cookie-text">
+      Utilizamos cookies para analisar o tráfego e exibir anúncios relevantes.
+      Nenhum dado é coletado sem o seu consentimento.
+      <a href="/privacy.html">Saiba mais</a>
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn-accept" onclick="acceptCookies('all')">Aceitar todos</button>
+      <button class="cookie-btn-essential" onclick="acceptCookies('essential')">Apenas essenciais</button>
+    </div>
+  </div>
+</div>
 
 <script>
 // ─── Mobile menu
@@ -2784,9 +2958,81 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 sections.forEach(s => observer.observe(s));
 
+// ─── Cookie Consent & AdSense
+const CONSENT_KEY = 'dublin-guide-consent';
+const CONSENT_VERSION = '1';
+
+function getConsent() {
+  try {
+    const data = JSON.parse(localStorage.getItem(CONSENT_KEY));
+    if (data && data.version === CONSENT_VERSION) return data;
+  } catch(e) {}
+  return null;
+}
+
+function acceptCookies(level) {
+  const consent = { level: level, version: CONSENT_VERSION, timestamp: new Date().toISOString() };
+  try { localStorage.setItem(CONSENT_KEY, JSON.stringify(consent)); } catch(e) {}
+  document.getElementById('cookie-banner').classList.remove('visible');
+
+  if (level === 'all') {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted'
+    });
+    loadAdSense();
+  } else {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  }
+}
+
+function loadAdSense() {
+  if (document.getElementById('adsense-script')) return;
+  const s = document.createElement('script');
+  s.id = 'adsense-script';
+  s.async = true;
+  s.crossOrigin = 'anonymous';
+  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+  document.head.appendChild(s);
+}
+
+function initConsent() {
+  const existing = getConsent();
+  if (existing) {
+    if (existing.level === 'all') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+      loadAdSense();
+    } else {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    }
+  } else {
+    requestAnimationFrame(() => {
+      document.getElementById('cookie-banner').classList.add('visible');
+    });
+  }
+}
+
 // ─── Init
 loadChecklist();
 document.getElementById('check-total').textContent = document.querySelectorAll('.check-item').length;
+initConsent();
 </script>
 </body>
 </html>

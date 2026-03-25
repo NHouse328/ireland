@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /version.json
+
+Sitemap: https://ireland.gavriel.com.br/sitemap.xml
